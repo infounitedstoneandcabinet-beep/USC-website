@@ -4,15 +4,17 @@ import { ButtonLink } from "@/components/button-link";
 import { PhotoPlaceholder } from "@/components/photo-placeholder";
 import { CtaBand, SectionHeading } from "@/components/sections";
 import { site } from "@/lib/site";
+import { stones } from "@/lib/stones";
 
-const stoneSwatches = [1, 2, 3, 4, 5, 6].map((n) => `[Stone color photo ${n}]`);
+const stoneSwatches = stones.slice(0, 6);
 const cabinetSwatches = [1, 2, 3, 4].map((n) => `[Cabinet finish photo ${n}]`);
 
-const collections = [
+const collections: { title: string; text: string; photo: string; image?: { src: string; alt: string }; href: string }[] = [
   {
     title: "Stone Countertops",
     text: "Countertops for kitchens, bathrooms, islands and bars, chosen to match the way you live.",
     photo: "[Photo: stone countertop]",
+    image: { src: "/client/补资料-Calacata-Montana.webp", alt: "Calacata Montana stone slab close-up" },
     href: "/products#countertops",
   },
   {
@@ -46,6 +48,31 @@ function SwatchGrid({ labels, cols }: { labels: string[]; cols: string }) {
             className="block rounded-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg"
           >
             <PhotoPlaceholder label={label} className="aspect-[3/5] w-full" />
+          </Link>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+function StoneGrid({ items }: { items: { name: string; src: string }[] }) {
+  return (
+    <ul className="mt-12 grid grid-cols-3 gap-3 sm:gap-4 lg:grid-cols-6">
+      {items.map(({ name, src }) => (
+        <li key={name}>
+          <Link
+            href="/products#colors"
+            className="group block rounded-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg"
+          >
+            <img
+              src={src}
+              alt={`${name} stone slab`}
+              loading="lazy"
+              className="aspect-[3/5] w-full rounded-sm border border-border object-cover"
+            />
+            <span className="mt-2 block text-center text-xs font-semibold uppercase tracking-[0.12em] text-ink sm:text-sm">
+              {name}
+            </span>
           </Link>
         </li>
       ))}
@@ -94,7 +121,12 @@ export default function Home() {
             title="Quartz color inspiration"
             intro="A first look at our 40 quartz colors for your countertops."
           />
-          <SwatchGrid labels={stoneSwatches} cols="grid-cols-3 lg:grid-cols-6" />
+          <StoneGrid items={stoneSwatches} />
+          <div className="mt-10 flex justify-center">
+            <ButtonLink href="/products#colors" variant="outline">
+              See all stone colors
+            </ButtonLink>
+          </div>
         </div>
       </section>
 
@@ -115,13 +147,17 @@ export default function Home() {
             intro="Countertops and cabinets are the heart of a kitchen or bath. Working with one company keeps colors, sizes and timing in step."
           />
           <div className="mt-12 grid gap-6 md:grid-cols-2">
-            {collections.map(({ title, text, photo, href }) => (
+            {collections.map(({ title, text, photo, image, href }) => (
               <Link
                 key={title}
                 href={href}
                 className="group flex flex-col overflow-hidden rounded-sm bg-card shadow-md transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg"
               >
-                <PhotoPlaceholder label={photo} className="aspect-[16/10] rounded-none border-0" />
+                {image ? (
+                  <img src={image.src} alt={image.alt} loading="lazy" className="aspect-[16/10] w-full object-cover" />
+                ) : (
+                  <PhotoPlaceholder label={photo} className="aspect-[16/10] rounded-none border-0" />
+                )}
                 <div className="flex flex-1 flex-col items-center p-6 text-center md:p-8">
                   <h3 className="text-xl font-semibold uppercase tracking-[0.12em] text-ink">{title}</h3>
                   <p className="mt-3 text-muted-foreground">{text}</p>

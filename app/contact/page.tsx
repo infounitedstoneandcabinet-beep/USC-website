@@ -30,7 +30,7 @@ export default function ContactPage() {
       />
       <section className="bg-background py-16 md:py-24">
         <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-5">
-          <ul className="grid content-start gap-4 sm:grid-cols-2 lg:col-span-3">
+          <ul className="grid min-w-0 content-start gap-4 sm:grid-cols-2 lg:col-span-3 [&>li]:min-w-0">
             {details.map(({ icon: Icon, label, value, href, external }) => (
               <li key={label} className="flex gap-4 rounded-sm border border-border bg-card p-6 shadow-sm">
                 <span className="grid size-11 shrink-0 place-items-center rounded-full border border-slate-300 text-primary">
@@ -42,12 +42,12 @@ export default function ContactPage() {
                     <a
                       href={href}
                       {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                      className="mt-1 inline-block break-words rounded text-primary underline-offset-4 transition-colors duration-200 hover:underline"
+                      className="mt-1 inline-block max-w-full rounded [overflow-wrap:anywhere] text-primary underline-offset-4 transition-colors duration-200 hover:underline"
                     >
                       {value}
                     </a>
                   ) : (
-                    <p className="mt-1 break-words text-muted-foreground">{value}</p>
+                    <p className="mt-1 text-muted-foreground [overflow-wrap:anywhere]">{value}</p>
                   )}
                 </div>
               </li>
@@ -69,7 +69,7 @@ export default function ContactPage() {
               </dl>
             </li>
           </ul>
-          <aside className="rounded-sm bg-slate-700 p-6 text-slate-200 sm:p-8 lg:col-span-2">
+          <aside className="min-w-0 rounded-sm bg-slate-700 p-6 text-slate-200 sm:p-8 lg:col-span-2">
             <h2 className="text-xl font-semibold uppercase tracking-[0.1em] text-white">Helpful to have ready</h2>
             <p className="mt-2">These details help us prepare an accurate quote:</p>
             <ol className="mt-6 space-y-3">

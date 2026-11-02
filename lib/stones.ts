@@ -1,0 +1,30 @@
+const files = [
+  "Calacata-Elegant.png",
+  "Calacata-Taj.webp",
+  "Black-Star.jpg",
+  "Calacata-Caramel.webp",
+  "Carrara-White.webp",
+  "Concrete-Grey.jpg",
+  "Calacata-Alaska.webp",
+  "Calacata-Alto.webp",
+  "Calacata-Borghini.webp",
+  "Calacata-Laza.webp",
+  "Calacata-Montana.webp",
+  "Calacata-Oceanic.webp",
+  "Calacata-Rocky.webp",
+  "Calacata-Vega.webp",
+  "Aran-white.webp",
+  "Bianco-Pietra.webp",
+  "Bianco-Swan.webp",
+  "Crystal-White.jpg",
+  "Fleece.webp",
+  "French-Grey.webp",
+  "Luccid-Gold.webp",
+  "Perla-Venata.webp",
+  "Volakas-White.webp",
+];
+
+export const stones = files.map((file) => ({
+  name: file.replace(/\.\w+$/, "").replace(/-/g, " "),
+  src: `/client/补资料-${file}`,
+}));

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Check, Droplets, LayoutGrid } from "lucide-react";
 import { PhotoPlaceholder } from "@/components/photo-placeholder";
 import { CtaBand, PageHero, SectionHeading } from "@/components/sections";
+import { stones } from "@/lib/stones";
 import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = { title: "Products" };
@@ -15,7 +16,16 @@ const extras = [
   { icon: LayoutGrid, title: "Flooring", text: "Flooring in 30+ colors to complete your room." },
 ];
 
-const products = [
+const products: {
+  id: string;
+  eyebrow: string;
+  title: string;
+  text: string;
+  uses: string[];
+  list: string;
+  photo: string;
+  image?: { src: string; alt: string };
+}[] = [
   {
     id: "countertops",
     eyebrow: "Countertops",
@@ -24,6 +34,7 @@ const products = [
     uses: ["Kitchen countertops", "Islands and bars", "Bathroom vanity tops"],
     list: "Quartz countertops in 40 colors to choose from.",
     photo: "[Photo: stone slabs or countertop close-up]",
+    image: { src: "/client/补资料-Calacata-Elegant.png", alt: "Calacata Elegant stone slab close-up" },
   },
   {
     id: "cabinets",
@@ -51,7 +62,15 @@ export default function ProductsPage() {
           className={cn("scroll-mt-32 py-16 md:py-24", i % 2 === 1 ? "bg-background" : "bg-white")}
         >
           <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:gap-16">
-            <PhotoPlaceholder label={p.photo} className={cn("aspect-[4/3] w-full", i % 2 === 1 && "lg:order-2")} />
+            {p.image ? (
+              <img
+                src={p.image.src}
+                alt={p.image.alt}
+                className={cn("aspect-[4/3] w-full rounded-sm object-cover shadow-md", i % 2 === 1 && "lg:order-2")}
+              />
+            ) : (
+              <PhotoPlaceholder label={p.photo} className={cn("aspect-[4/3] w-full", i % 2 === 1 && "lg:order-2")} />
+            )}
             <div>
               <p className="font-heading text-sm font-semibold uppercase tracking-[0.25em] text-primary">{p.eyebrow}</p>
               <h2 className="mt-3 text-2xl font-semibold uppercase tracking-[0.1em] text-ink md:text-3xl">{p.title}</h2>
@@ -70,7 +89,33 @@ export default function ProductsPage() {
           </div>
         </section>
       ))}
-      <section className="bg-white py-16 md:py-24">
+      <section id="colors" className="scroll-mt-32 bg-white py-16 md:py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6">
+          <SectionHeading
+            eyebrow="Stone colors"
+            title="Browse our stone colors"
+            intro="A selection of the stone colors you can choose for your countertops. Ask us to see the full range."
+          />
+          <ul className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6">
+            {stones.map(({ name, src }) => (
+              <li key={name}>
+                <figure>
+                  <img
+                    src={src}
+                    alt={`${name} stone slab`}
+                    loading="lazy"
+                    className="aspect-square w-full rounded-sm border border-border object-cover"
+                  />
+                  <figcaption className="mt-2 text-center text-xs font-semibold uppercase tracking-[0.12em] text-ink sm:text-sm">
+                    {name}
+                  </figcaption>
+                </figure>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+      <section className="bg-background py-16 md:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <SectionHeading eyebrow="Also available" title="Sinks and flooring" />
           <ul className="mx-auto mt-12 grid max-w-4xl gap-6 md:grid-cols-2">
