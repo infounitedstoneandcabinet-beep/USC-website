@@ -35,10 +35,28 @@ export function Footer() {
             For expert guidance, contact us
           </p>
           <ul className="mt-4 space-y-3">
-            <li className="flex gap-3"><Phone aria-hidden="true" className="mt-1 size-4 shrink-0" />{site.phone}</li>
+            <li>
+              <a href={site.phoneHref} className="flex gap-3 rounded transition-colors duration-200 hover:text-white">
+                <Phone aria-hidden="true" className="mt-1 size-4 shrink-0" />
+                {site.phone}
+              </a>
+            </li>
             <li className="flex gap-3"><Mail aria-hidden="true" className="mt-1 size-4 shrink-0" />{site.email}</li>
-            <li className="flex gap-3"><MapPin aria-hidden="true" className="mt-1 size-4 shrink-0" />{site.address}</li>
-            <li className="flex gap-3"><Clock aria-hidden="true" className="mt-1 size-4 shrink-0" />{site.hours}</li>
+            <li>
+              <a
+                href={site.mapHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex gap-3 rounded transition-colors duration-200 hover:text-white"
+              >
+                <MapPin aria-hidden="true" className="mt-1 size-4 shrink-0" />
+                {site.address}
+              </a>
+            </li>
+            <li className="flex gap-3">
+              <Clock aria-hidden="true" className="mt-1 size-4 shrink-0" />
+              <span>{site.hoursSummary}</span>
+            </li>
           </ul>
         </div>
       </div>

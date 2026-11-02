@@ -1,4 +1,5 @@
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Phone } from "lucide-react";
+import { site } from "@/lib/site";
 import { cn } from "@/lib/utils";
 import { ButtonLink } from "./button-link";
 
@@ -51,9 +52,14 @@ export function CtaBand() {
         <p className="max-w-2xl text-lg text-slate-200">
           Tell us about your project and we will get back to you with a quote.
         </p>
-        <ButtonLink href="/contact">
-          Request a Quote <ArrowRight aria-hidden="true" className="size-5" />
-        </ButtonLink>
+        <div className="flex flex-col gap-3 sm:flex-row">
+          <ButtonLink href="/contact">
+            Request a Quote <ArrowRight aria-hidden="true" className="size-5" />
+          </ButtonLink>
+          <ButtonLink href={site.phoneHref} variant="light">
+            <Phone aria-hidden="true" className="size-5" /> Call {site.phone}
+          </ButtonLink>
+        </div>
       </div>
     </section>
   );

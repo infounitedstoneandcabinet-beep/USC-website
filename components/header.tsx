@@ -18,14 +18,22 @@ export function Header() {
     <header className="sticky top-0 z-50 border-b border-border bg-white/95 backdrop-blur">
       <div className="hidden border-b border-border md:block">
         <div className="mx-auto flex max-w-7xl items-center justify-end gap-6 px-6 py-1.5 text-xs uppercase tracking-[0.15em] text-muted-foreground">
-          <span className="flex items-center gap-2">
+          <a
+            href={site.mapHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 rounded transition-colors duration-200 hover:text-primary"
+          >
             <MapPin aria-hidden="true" className="size-3.5" />
             {site.address}
-          </span>
-          <span className="flex items-center gap-2">
+          </a>
+          <a
+            href={site.phoneHref}
+            className="flex items-center gap-2 rounded transition-colors duration-200 hover:text-primary"
+          >
             <Phone aria-hidden="true" className="size-3.5" />
             {site.phone}
-          </span>
+          </a>
         </div>
       </div>
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 md:h-20">
@@ -94,9 +102,14 @@ export function Header() {
                 </Link>
               </li>
             ))}
-            <li className="flex items-center gap-2 px-3 py-3 text-sm text-muted-foreground">
-              <Phone aria-hidden="true" className="size-4" />
-              {site.phone}
+            <li>
+              <a
+                href={site.phoneHref}
+                className="flex items-center gap-2 rounded-md px-3 py-3 text-sm text-muted-foreground transition-colors duration-200 hover:bg-muted"
+              >
+                <Phone aria-hidden="true" className="size-4" />
+                {site.phone}
+              </a>
             </li>
             <li className="pt-2 sm:hidden">
               <ButtonLink href="/contact" className="w-full">
