@@ -19,25 +19,27 @@ export default function AboutPage() {
         title="About United Stone & Cabinet"
         intro="A countertop and cabinet company focused on helping you get both right."
       />
-      <section className="py-16 md:py-24">
-        <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-2">
+      <section className="bg-white py-16 md:py-24">
+        <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:gap-16">
           <div>
-            <SectionHeading eyebrow="Our story" title="Who we are" />
-            <p className="mt-6 rounded-lg border border-dashed border-slate-400 bg-card p-4 text-lg text-muted-foreground">
+            <SectionHeading eyebrow="Our story" title="Who we are" align="left" />
+            <p className="mt-6 rounded-sm border border-dashed border-slate-400 bg-card p-4 text-lg text-muted-foreground">
               [Company story: when you started, who runs the business and what you are proud of]
             </p>
           </div>
           <PhotoPlaceholder label="[Photo: team or showroom]" className="aspect-[4/3] w-full" />
         </div>
       </section>
-      <section className="bg-muted py-16 md:py-24">
+      <section className="bg-background py-16 md:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <SectionHeading eyebrow="How we work" title="What you can expect" />
           <ul className="mt-12 grid gap-6 md:grid-cols-3">
             {values.map(({ icon: Icon, title, text }) => (
-              <li key={title} className="rounded-xl bg-card p-6 shadow-sm">
-                <Icon aria-hidden="true" className="size-7 text-primary" />
-                <h3 className="mt-4 text-xl font-semibold text-ink">{title}</h3>
+              <li key={title} className="flex flex-col items-center rounded-sm bg-card p-8 text-center shadow-sm">
+                <span className="grid size-12 place-items-center rounded-full border border-slate-300 text-primary">
+                  <Icon aria-hidden="true" className="size-5" />
+                </span>
+                <h3 className="mt-4 text-lg font-semibold uppercase tracking-[0.08em] text-ink">{title}</h3>
                 <p className="mt-2 text-muted-foreground">{text}</p>
               </li>
             ))}

@@ -7,11 +7,11 @@ export function PhotoPlaceholder({ label, className }: { label: string; classNam
       role="img"
       aria-label={label}
       className={cn(
-        "flex flex-col items-center justify-center gap-2 overflow-hidden rounded-xl border border-dashed border-slate-400 bg-gradient-to-br from-slate-200 via-muted to-slate-300 p-4 text-center text-sm font-medium text-muted-foreground",
+        "flex flex-col items-center justify-center gap-2 overflow-hidden rounded-sm border border-dashed border-slate-400 bg-gradient-to-br from-slate-100 via-slate-200 to-slate-300 p-3 text-center text-sm font-medium text-slate-600",
         className,
       )}
     >
-      <ImageIcon aria-hidden="true" className="size-8 text-slate-500" />
+      <ImageIcon aria-hidden="true" className="size-7 shrink-0 text-slate-500" />
       <span>{label}</span>
     </div>
   );

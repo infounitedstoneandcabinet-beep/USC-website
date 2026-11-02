@@ -36,12 +36,17 @@ export default function ProductsPage() {
         intro="Explore our two product lines. Not sure what fits? Ask us and we will help you compare."
       />
       {products.map((p, i) => (
-        <section key={p.id} id={p.id} className={cn("scroll-mt-28 py-16 md:py-24", i % 2 === 1 && "bg-muted")}>
-          <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-2">
+        <section
+          key={p.id}
+          id={p.id}
+          className={cn("scroll-mt-32 py-16 md:py-24", i % 2 === 1 ? "bg-background" : "bg-white")}
+        >
+          <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:gap-16">
             <PhotoPlaceholder label={p.photo} className={cn("aspect-[4/3] w-full", i % 2 === 1 && "lg:order-2")} />
             <div>
-              <p className="font-heading text-sm font-semibold uppercase tracking-[0.2em] text-primary">{p.eyebrow}</p>
-              <h2 className="mt-3 text-3xl font-bold text-ink md:text-4xl">{p.title}</h2>
+              <p className="font-heading text-sm font-semibold uppercase tracking-[0.25em] text-primary">{p.eyebrow}</p>
+              <h2 className="mt-3 text-2xl font-semibold uppercase tracking-[0.1em] text-ink md:text-3xl">{p.title}</h2>
+              <span aria-hidden="true" className="mt-5 block h-px w-16 bg-slate-400" />
               <p className="mt-4 text-lg text-muted-foreground">{p.text}</p>
               <ul className="mt-6 space-y-3">
                 {p.uses.map((u) => (
@@ -51,7 +56,7 @@ export default function ProductsPage() {
                   </li>
                 ))}
               </ul>
-              <p className="mt-6 rounded-lg border border-dashed border-slate-400 bg-card p-4 text-muted-foreground">
+              <p className="mt-6 rounded-sm border border-dashed border-slate-400 bg-card p-4 text-muted-foreground">
                 {p.list}
               </p>
             </div>
