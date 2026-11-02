@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import { Check, Droplets, LayoutGrid } from "lucide-react";
+import { ArrowRight, Check, Droplets, LayoutGrid } from "lucide-react";
+import { ButtonLink } from "@/components/button-link";
 import { PhotoPlaceholder } from "@/components/photo-placeholder";
 import { CtaBand, PageHero, SectionHeading } from "@/components/sections";
-import { stones } from "@/lib/stones";
 import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = { title: "Products" };
@@ -25,6 +25,8 @@ const products: {
   list: string;
   photo: string;
   image?: { src: string; alt: string };
+  href: string;
+  cta: string;
 }[] = [
   {
     id: "countertops",
@@ -35,6 +37,8 @@ const products: {
     list: "Quartz countertops in 40 colors to choose from.",
     photo: "[Photo: stone slabs or countertop close-up]",
     image: { src: "/client/补资料-Calacata-Elegant.png", alt: "Calacata Elegant stone slab close-up" },
+    href: "/products/stone",
+    cta: "See all stone colors",
   },
   {
     id: "cabinets",
@@ -44,6 +48,8 @@ const products: {
     uses: ["Kitchen cabinets", "Bathroom vanities", "Matching countertop and cabinet colors"],
     list: "15 cabinet styles and colors to choose from.",
     photo: "[Photo: cabinet styles or finishes]",
+    href: "/products/cabinets",
+    cta: "View cabinets",
   },
 ];
 
@@ -85,37 +91,14 @@ export default function ProductsPage() {
                 ))}
               </ul>
               <p className="mt-6 rounded-sm border-l-4 border-primary bg-card p-4 font-medium text-ink">{p.list}</p>
+              <ButtonLink href={p.href} variant="outline" className="mt-6">
+                {p.cta} <ArrowRight aria-hidden="true" className="size-5" />
+              </ButtonLink>
             </div>
           </div>
         </section>
       ))}
-      <section id="colors" className="scroll-mt-32 bg-white py-16 md:py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6">
-          <SectionHeading
-            eyebrow="Stone colors"
-            title="Browse our stone colors"
-            intro="A selection of the stone colors you can choose for your countertops. Ask us to see the full range."
-          />
-          <ul className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6">
-            {stones.map(({ name, src }) => (
-              <li key={name}>
-                <figure>
-                  <img
-                    src={src}
-                    alt={`${name} stone slab`}
-                    loading="lazy"
-                    className="aspect-square w-full rounded-sm border border-border object-cover"
-                  />
-                  <figcaption className="mt-2 text-center text-xs font-semibold uppercase tracking-[0.12em] text-ink sm:text-sm">
-                    {name}
-                  </figcaption>
-                </figure>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-      <section className="bg-background py-16 md:py-24">
+      <section className="bg-white py-16 md:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <SectionHeading eyebrow="Also available" title="Sinks and flooring" />
           <ul className="mx-auto mt-12 grid max-w-4xl gap-6 md:grid-cols-2">

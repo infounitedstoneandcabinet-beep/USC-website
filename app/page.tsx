@@ -2,7 +2,9 @@ import Link from "next/link";
 import { ArrowRight, ClipboardList, MessageSquare, Ruler } from "lucide-react";
 import { ButtonLink } from "@/components/button-link";
 import { PhotoPlaceholder } from "@/components/photo-placeholder";
+import { HeroCarousel } from "@/components/hero-carousel";
 import { CtaBand, SectionHeading } from "@/components/sections";
+import { heroSlides } from "@/lib/showroom";
 import { site } from "@/lib/site";
 import { stones } from "@/lib/stones";
 
@@ -15,13 +17,13 @@ const collections: { title: string; text: string; photo: string; image?: { src: 
     text: "Countertops for kitchens, bathrooms, islands and bars, chosen to match the way you live.",
     photo: "[Photo: stone countertop]",
     image: { src: "/client/补资料-Calacata-Montana.webp", alt: "Calacata Montana stone slab close-up" },
-    href: "/products#countertops",
+    href: "/products/stone",
   },
   {
     title: "Cabinets",
     text: "Kitchen and bathroom cabinetry that pairs with your countertop for one finished look.",
     photo: "[Photo: kitchen cabinets]",
-    href: "/products#cabinets",
+    href: "/products/cabinets",
   },
 ];
 
@@ -44,7 +46,7 @@ function SwatchGrid({ labels, cols }: { labels: string[]; cols: string }) {
       {labels.map((label) => (
         <li key={label}>
           <Link
-            href="/products"
+            href="/products/cabinets"
             className="block rounded-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg"
           >
             <PhotoPlaceholder label={label} className="aspect-[3/5] w-full" />
@@ -61,7 +63,7 @@ function StoneGrid({ items }: { items: { name: string; src: string }[] }) {
       {items.map(({ name, src }) => (
         <li key={name}>
           <Link
-            href="/products#colors"
+            href="/products/stone"
             className="group block rounded-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg"
           >
             <img
@@ -86,9 +88,9 @@ export default function Home() {
       <section className="bg-white pt-4 sm:pt-6">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <div className="relative">
-            <PhotoPlaceholder
-              label="[Hero photo: finished kitchen]"
-              className="aspect-[4/3] w-full sm:aspect-[16/9] lg:aspect-auto lg:h-[36rem] lg:items-end lg:pr-16"
+            <HeroCarousel
+              slides={heroSlides}
+              className="aspect-[4/3] w-full sm:aspect-[16/9] lg:aspect-auto lg:h-[36rem]"
             />
             <div className="relative -mt-10 mx-3 bg-white p-6 text-center shadow-xl sm:mx-10 sm:p-8 lg:absolute lg:left-12 lg:top-1/2 lg:mx-0 lg:mt-0 lg:w-[26rem] lg:-translate-y-1/2">
               <p className="font-heading text-xs font-semibold uppercase tracking-[0.3em] text-primary">
@@ -123,7 +125,7 @@ export default function Home() {
           />
           <StoneGrid items={stoneSwatches} />
           <div className="mt-10 flex justify-center">
-            <ButtonLink href="/products#colors" variant="outline">
+            <ButtonLink href="/products/stone" variant="outline">
               See all stone colors
             </ButtonLink>
           </div>

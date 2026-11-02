@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { MapPin, Menu, Phone, X } from "lucide-react";
+import { ChevronDown, MapPin, Menu, Phone, X } from "lucide-react";
 import { nav, site } from "@/lib/site";
 import { cn } from "@/lib/utils";
 import { ButtonLink } from "./button-link";
@@ -11,8 +11,12 @@ import { ButtonLink } from "./button-link";
 export function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const [subOpen, setSubOpen] = useState(false);
 
-  useEffect(() => setOpen(false), [pathname]);
+  useEffect(() => {
+    setOpen(false);
+    setSubOpen(false);
+  }, [pathname]);
 
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-white/95 backdrop-blur">
@@ -57,7 +61,75 @@ export function Header() {
         <nav aria-label="Main" className="hidden lg:block">
           <ul className="flex items-center gap-1">
             {nav.map((item) => {
-              const active = pathname === item.href;
+              const active = item.children ? pathname.startsWith(item.href) : pathname === item.href;
+              if (item.children) {
+                return (
+                  <li
+                    key={item.href}
+                    className="relative"
+                    onMouseEnter={() => setSubOpen(true)}
+                    onMouseLeave={() => setSubOpen(false)}
+                    onBlur={(e) => {
+                      if (!e.currentTarget.contains(e.relatedTarget as Node | null)) setSubOpen(false);
+                    }}
+                    onKeyDown={(e) => {
+                      if (e.key === "Escape") setSubOpen(false);
+                    }}
+                  >
+                    <div className="flex items-center">
+                      <Link
+                        href={item.href}
+                        aria-current={pathname === item.href ? "page" : undefined}
+                        className={cn(
+                          "rounded-md border-b-2 py-2 pl-4 pr-1 text-sm font-medium uppercase tracking-[0.15em] transition-colors duration-200",
+                          active
+                            ? "border-primary text-ink"
+                            : "border-transparent text-muted-foreground hover:text-primary",
+                        )}
+                      >
+                        {item.label}
+                      </Link>
+                      <button
+                        type="button"
+                        onClick={() => setSubOpen((v) => !v)}
+                        aria-expanded={subOpen}
+                        aria-controls="products-menu"
+                        aria-label={`${item.label} menu`}
+                        className="grid size-8 place-items-center rounded-md text-muted-foreground transition-colors duration-200 hover:text-primary"
+                      >
+                        <ChevronDown
+                          aria-hidden="true"
+                          className={cn("size-4 transition-transform duration-200", subOpen && "rotate-180")}
+                        />
+                      </button>
+                    </div>
+                    <div
+                      id="products-menu"
+                      className={cn(
+                        "absolute left-0 top-full pt-2 transition-all duration-200",
+                        subOpen ? "visible translate-y-0 opacity-100" : "invisible -translate-y-1 opacity-0",
+                      )}
+                    >
+                      <ul className="min-w-48 rounded-sm border border-border bg-white py-2 shadow-lg">
+                        {item.children.map((child) => (
+                          <li key={child.href}>
+                            <Link
+                              href={child.href}
+                              aria-current={pathname === child.href ? "page" : undefined}
+                              className={cn(
+                                "block px-5 py-3 text-sm font-medium uppercase tracking-[0.15em] transition-colors duration-200 hover:bg-muted hover:text-primary",
+                                pathname === child.href ? "text-primary" : "text-ink",
+                              )}
+                            >
+                              {child.label}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </li>
+                );
+              }
               return (
                 <li key={item.href}>
                   <Link
@@ -110,6 +182,24 @@ export function Header() {
                 >
                   {item.label}
                 </Link>
+                {item.children && (
+                  <ul className="ml-4 border-l border-border pl-2">
+                    {item.children.map((child) => (
+                      <li key={child.href}>
+                        <Link
+                          href={child.href}
+                          aria-current={pathname === child.href ? "page" : undefined}
+                          className={cn(
+                            "block rounded-md px-3 py-3 text-sm font-medium uppercase tracking-[0.15em] transition-colors duration-200 hover:bg-muted",
+                            pathname === child.href ? "text-primary" : "text-muted-foreground",
+                          )}
+                        >
+                          {child.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </li>
             ))}
             <li>

@@ -8,6 +8,11 @@ export const site = {
   address: "972 W 9th St, Upland, CA 91786",
   mapHref: "https://www.google.com/maps/search/?api=1&query=972+W+9th+St%2C+Upland%2C+CA+91786",
   hoursSummary: "Mon–Fri 8:00 AM–5:00 PM · Sat 8:00 AM–2:00 PM · Sun Closed",
+  hoursRows: [
+    { days: "Mon – Fri", time: "8:00 AM – 5:00 PM" },
+    { days: "Saturday", time: "8:00 AM – 2:00 PM" },
+    { days: "Sunday", time: "Closed" },
+  ],
   hours: [
     { day: "Monday", time: "8:00 AM – 5:00 PM" },
     { day: "Tuesday", time: "8:00 AM – 5:00 PM" },
@@ -20,9 +25,18 @@ export const site = {
   serviceArea: "California, Oregon, Nevada & Arizona",
 };
 
-export const nav = [
+export type NavItem = { href: string; label: string; children?: { href: string; label: string }[] };
+
+export const nav: NavItem[] = [
   { href: "/", label: "Home" },
-  { href: "/products", label: "Products" },
+  {
+    href: "/products",
+    label: "Products",
+    children: [
+      { href: "/products/stone", label: "Stone" },
+      { href: "/products/cabinets", label: "Cabinets" },
+    ],
+  },
   { href: "/gallery", label: "Gallery" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },

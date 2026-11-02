@@ -63,7 +63,14 @@ export function Footer() {
             </li>
             <li className="flex gap-3">
               <Clock aria-hidden="true" className="mt-1 size-4 shrink-0" />
-              <span>{site.hoursSummary}</span>
+              <dl className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-1">
+                {site.hoursRows.map(({ days, time }) => (
+                  <div key={days} className="contents">
+                    <dt className="font-medium text-white">{days}</dt>
+                    <dd>{time}</dd>
+                  </div>
+                ))}
+              </dl>
             </li>
           </ul>
         </div>
