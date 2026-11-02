@@ -30,8 +30,9 @@ const steps = [
 ];
 
 const stats = [
-  { value: "[Years in business]", label: "Years of experience" },
-  { value: "[Projects completed]", label: "Projects completed" },
+  { value: site.founded, label: "Established" },
+  { value: "40", label: "Quartz colors" },
+  { value: "15", label: "Cabinet styles & colors" },
   { value: site.serviceArea, label: "Areas we serve" },
 ];
 
@@ -90,8 +91,8 @@ export default function Home() {
       <section className="bg-white py-16 md:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <SectionHeading
-            title="Natural stone inspiration"
-            intro="A first look at the stone colors you can choose for your countertops."
+            title="Quartz color inspiration"
+            intro="A first look at our 40 quartz colors for your countertops."
           />
           <SwatchGrid labels={stoneSwatches} cols="grid-cols-3 lg:grid-cols-6" />
         </div>
@@ -101,7 +102,7 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <SectionHeading
             title="Cabinet finish colors"
-            intro="Cabinet finishes that pair with your countertop for one finished look."
+            intro="Choose from 15 cabinet styles and colors that pair with your countertop for one finished look."
           />
           <SwatchGrid labels={cabinetSwatches} cols="mx-auto max-w-4xl grid-cols-2 sm:grid-cols-4" />
         </div>
@@ -160,7 +161,7 @@ export default function Home() {
           <SectionHeading title={`About ${site.name}`} />
         </div>
         <div className="mt-10 border-y border-border bg-[repeating-linear-gradient(135deg,#f8fafc_0,#f8fafc_6px,#eef2f7_6px,#eef2f7_7px)]">
-          <ul className="mx-auto grid max-w-5xl gap-8 px-4 py-10 sm:grid-cols-3 sm:px-6">
+          <ul className="mx-auto grid max-w-6xl gap-8 px-4 py-10 sm:grid-cols-2 sm:px-6 lg:grid-cols-4">
             {stats.map(({ value, label }) => (
               <li key={label} className="text-center">
                 <p className="font-heading text-xl font-light text-ink md:text-2xl">{value}</p>

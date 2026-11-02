@@ -2,7 +2,9 @@ export const site = {
   name: "United Stone & Cabinet",
   phone: "(909) 377-5010",
   phoneHref: "tel:+19093775010",
-  email: "[Email address]",
+  email: "Info.unitedstoneandcabinet@gmail.com",
+  emailHref: "mailto:Info.unitedstoneandcabinet@gmail.com",
+  founded: "June 2026",
   address: "972 W 9th St, Upland, CA 91786",
   mapHref: "https://www.google.com/maps/search/?api=1&query=972+W+9th+St%2C+Upland%2C+CA+91786",
   hoursSummary: "Mon–Fri 8:00 AM–5:00 PM · Sat 8:00 AM–4:00 PM · Sun Closed",
@@ -15,7 +17,7 @@ export const site = {
     { day: "Saturday", time: "8:00 AM – 4:00 PM" },
     { day: "Sunday", time: "Closed" },
   ],
-  serviceArea: "[Service area]",
+  serviceArea: "California, Oregon, Nevada & Arizona",
 };
 
 export const nav = [

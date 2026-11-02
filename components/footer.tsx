@@ -41,7 +41,15 @@ export function Footer() {
                 {site.phone}
               </a>
             </li>
-            <li className="flex gap-3"><Mail aria-hidden="true" className="mt-1 size-4 shrink-0" />{site.email}</li>
+            <li>
+              <a
+                href={site.emailHref}
+                className="flex gap-3 break-all rounded transition-colors duration-200 hover:text-white"
+              >
+                <Mail aria-hidden="true" className="mt-1 size-4 shrink-0" />
+                {site.email}
+              </a>
+            </li>
             <li>
               <a
                 href={site.mapHref}

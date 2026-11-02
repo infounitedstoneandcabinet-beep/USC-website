@@ -37,10 +37,20 @@ export function Header() {
         </div>
       </div>
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 md:h-20">
-        <Link href="/" className="flex flex-col rounded-md leading-none" aria-label={`${site.name} home`}>
-          <span className="font-heading text-2xl font-semibold tracking-[0.12em] text-ink">UNITED</span>
-          <span className="mt-1 text-[0.7rem] font-medium uppercase tracking-[0.3em] text-muted-foreground">
-            Stone &amp; Cabinet
+        <Link href="/" className="flex items-center gap-3 rounded-md leading-none" aria-label={`${site.name} home`}>
+          {/* Crop the USC monogram out of the full logo file */}
+          <span className="relative block aspect-[3/2] h-10 shrink-0 overflow-hidden md:h-12">
+            <img
+              src="/client/补资料-4984cdcd5e963ef2f3deea3f4cf25208-2.webp"
+              alt="United Stone & Cabinet logo"
+              className="size-full origin-[50%_25%] scale-[2.65] object-cover"
+            />
+          </span>
+          <span className="flex flex-col">
+            <span className="font-heading text-2xl font-semibold tracking-[0.12em] text-ink">UNITED</span>
+            <span className="mt-1 text-[0.7rem] font-medium uppercase tracking-[0.3em] text-muted-foreground">
+              Stone &amp; Cabinet
+            </span>
           </span>
         </Link>
 

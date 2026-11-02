@@ -7,7 +7,7 @@ export const metadata: Metadata = { title: "Contact" };
 
 const details = [
   { icon: Phone, label: "Phone", value: site.phone, href: site.phoneHref },
-  { icon: Mail, label: "Email", value: site.email },
+  { icon: Mail, label: "Email", value: site.email, href: site.emailHref },
   { icon: MapPin, label: "Showroom", value: site.address, href: site.mapHref, external: true },
   { icon: MapIcon, label: "Areas we serve", value: site.serviceArea },
 ];

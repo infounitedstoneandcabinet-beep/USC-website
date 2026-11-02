@@ -1,10 +1,19 @@
 import type { Metadata } from "next";
-import { Check } from "lucide-react";
+import { Check, Droplets, LayoutGrid } from "lucide-react";
 import { PhotoPlaceholder } from "@/components/photo-placeholder";
-import { CtaBand, PageHero } from "@/components/sections";
+import { CtaBand, PageHero, SectionHeading } from "@/components/sections";
 import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = { title: "Products" };
+
+const extras = [
+  {
+    icon: Droplets,
+    title: "Sinks",
+    text: "Stainless steel kitchen sinks and ceramic bathroom sinks, with 20 options to choose from.",
+  },
+  { icon: LayoutGrid, title: "Flooring", text: "Flooring in 30+ colors to complete your room." },
+];
 
 const products = [
   {
@@ -13,7 +22,7 @@ const products = [
     title: "Stone countertops",
     text: "A countertop is the surface you use every day. We help you compare colors and finishes so your choice looks right and suits how you cook and clean.",
     uses: ["Kitchen countertops", "Islands and bars", "Bathroom vanity tops"],
-    list: "[Stone materials and colors you carry]",
+    list: "Quartz countertops in 40 colors to choose from.",
     photo: "[Photo: stone slabs or countertop close-up]",
   },
   {
@@ -22,7 +31,7 @@ const products = [
     title: "Kitchen and bathroom cabinets",
     text: "Cabinets set the layout and storage of a room. Choosing them together with your countertop keeps sizes, colors and timing aligned.",
     uses: ["Kitchen cabinets", "Bathroom vanities", "Matching countertop and cabinet colors"],
-    list: "[Cabinet styles and finishes you offer]",
+    list: "15 cabinet styles and colors to choose from.",
     photo: "[Photo: cabinet styles or finishes]",
   },
 ];
@@ -56,13 +65,27 @@ export default function ProductsPage() {
                   </li>
                 ))}
               </ul>
-              <p className="mt-6 rounded-sm border border-dashed border-slate-400 bg-card p-4 text-muted-foreground">
-                {p.list}
-              </p>
+              <p className="mt-6 rounded-sm border-l-4 border-primary bg-card p-4 font-medium text-ink">{p.list}</p>
             </div>
           </div>
         </section>
       ))}
+      <section className="bg-white py-16 md:py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6">
+          <SectionHeading eyebrow="Also available" title="Sinks and flooring" />
+          <ul className="mx-auto mt-12 grid max-w-4xl gap-6 md:grid-cols-2">
+            {extras.map(({ icon: Icon, title, text }) => (
+              <li key={title} className="flex flex-col items-center rounded-sm bg-card p-8 text-center shadow-sm">
+                <span className="grid size-12 place-items-center rounded-full border border-slate-300 text-primary">
+                  <Icon aria-hidden="true" className="size-5" />
+                </span>
+                <h3 className="mt-4 text-lg font-semibold uppercase tracking-[0.08em] text-ink">{title}</h3>
+                <p className="mt-2 text-muted-foreground">{text}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
       <CtaBand />
     </>
   );
