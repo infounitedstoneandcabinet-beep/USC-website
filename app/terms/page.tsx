@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { AlertTriangle } from "lucide-react";
 import { PageHero } from "@/components/sections";
 import { site } from "@/lib/site";
 
@@ -42,6 +43,44 @@ export default function TermsPage() {
               <p className="mt-3 text-lg text-muted-foreground">{text}</p>
             </div>
           ))}
+          <div className="rounded-sm border-l-4 border-amber-600 bg-amber-50 p-5 sm:p-6">
+            <h2 className="flex items-center gap-2 text-xl font-semibold uppercase tracking-[0.08em] text-ink">
+              <AlertTriangle aria-hidden="true" className="size-5 shrink-0 text-amber-700" />
+              Stone safety warning
+            </h2>
+            <p className="mt-3 text-lg text-slate-800">
+              <strong className="text-red-800">Warning:</strong> Our stone products are not hazardous as shipped or in
+              finished form. During fabrication (cutting, sawing, grinding, drilling, sanding) and installation, dust
+              and powder that contains crystalline silica may cause irritation to the skin, eyes, nose and airways.
+              Unprotected and prolonged exposure to such dust can cause illnesses such as silicosis, lung fibrosis,
+              lung cancer and kidney disease. Whenever the product is fabricated, wear an OSHA-approved respirator for
+              silica dust. A silica control program must be in place in accordance with all applicable laws and
+              regulations. For more information and requirements, see{" "}
+              <a
+                href="https://www.p65warnings.ca.gov"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded font-medium text-primary underline underline-offset-4"
+              >
+                www.P65Warnings.ca.gov
+              </a>{" "}
+              and{" "}
+              <a
+                href="https://www.osha.gov"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded font-medium text-primary underline underline-offset-4"
+              >
+                www.osha.gov
+              </a>
+              .
+            </p>
+            <p className="mt-3 text-lg text-slate-800">
+              <strong className="text-red-800">First aid:</strong> If the eyes or skin become irritated, flush with
+              plenty of water for at least 15 minutes until symptoms subside. If excessive dust is inhaled, move to a
+              place with fresh air. Consult a physician if you have difficulty breathing or any physical discomfort.
+            </p>
+          </div>
           <div>
             <h2 className="text-xl font-semibold uppercase tracking-[0.08em] text-ink">Contact</h2>
             <p className="mt-3 text-lg text-muted-foreground">
