@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { ArrowRight, Check, Droplets, LayoutGrid } from "lucide-react";
 import { ButtonLink } from "@/components/button-link";
+import { CabinetDoorStrip } from "@/components/cabinet-door-strip";
 import { PhotoPlaceholder } from "@/components/photo-placeholder";
 import { CtaBand, PageHero, SectionHeading } from "@/components/sections";
+import { cabinets } from "@/lib/cabinets";
 import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = { title: "Products" };
@@ -25,6 +27,7 @@ const products: {
   list: string;
   photo: string;
   image?: { src: string; alt: string };
+  doors?: { name: string; src: string }[];
   href: string;
   cta: string;
 }[] = [
@@ -47,7 +50,8 @@ const products: {
     text: "Cabinets set the layout and storage of a room. Choosing them together with your countertop keeps sizes, colors and timing aligned.",
     uses: ["Kitchen cabinets", "Bathroom vanities", "Matching countertop and cabinet colors"],
     list: "15 cabinet styles and colors to choose from.",
-    photo: "[Photo: cabinet styles or finishes]",
+    photo: "",
+    doors: [cabinets[0], cabinets[4], cabinets[12]],
     href: "/products/cabinets",
     cta: "View cabinets",
   },
@@ -73,6 +77,11 @@ export default function ProductsPage() {
                 src={p.image.src}
                 alt={p.image.alt}
                 className={cn("aspect-[4/3] w-full rounded-sm object-cover shadow-md", i % 2 === 1 && "lg:order-2")}
+              />
+            ) : p.doors ? (
+              <CabinetDoorStrip
+                doors={p.doors}
+                className={cn("aspect-[4/3] w-full rounded-sm shadow-md", i % 2 === 1 && "lg:order-2")}
               />
             ) : (
               <PhotoPlaceholder label={p.photo} className={cn("aspect-[4/3] w-full", i % 2 === 1 && "lg:order-2")} />

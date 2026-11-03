@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Check } from "lucide-react";
-import { PhotoPlaceholder } from "@/components/photo-placeholder";
 import { CtaBand, PageHero, SectionHeading } from "@/components/sections";
+import { cabinets } from "@/lib/cabinets";
 
 export const metadata: Metadata = { title: "Cabinets" };
 
@@ -26,10 +26,23 @@ export default function CabinetsPage() {
               </li>
             ))}
           </ul>
-          <PhotoPlaceholder
-            label="[Cabinet style and color photos]"
-            className="mx-auto mt-12 aspect-[16/9] w-full max-w-4xl"
-          />
+          <ul className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5 xl:grid-cols-7">
+            {cabinets.map(({ name, src }) => (
+              <li key={name}>
+                <figure>
+                  <img
+                    src={src}
+                    alt={`${name} cabinet door sample`}
+                    loading="lazy"
+                    className="aspect-[1/2] w-full rounded-sm border border-border object-cover"
+                  />
+                  <figcaption className="mt-2 text-center text-xs font-semibold uppercase tracking-[0.12em] text-ink sm:text-sm">
+                    {name}
+                  </figcaption>
+                </figure>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
       <CtaBand />

@@ -1,28 +1,34 @@
 import Link from "next/link";
 import { ArrowRight, ClipboardList, MessageSquare, Ruler } from "lucide-react";
 import { ButtonLink } from "@/components/button-link";
-import { PhotoPlaceholder } from "@/components/photo-placeholder";
+import { CabinetDoorStrip } from "@/components/cabinet-door-strip";
 import { HeroCarousel } from "@/components/hero-carousel";
 import { CtaBand, SectionHeading } from "@/components/sections";
+import { cabinets } from "@/lib/cabinets";
 import { heroSlides } from "@/lib/showroom";
 import { site } from "@/lib/site";
 import { stones } from "@/lib/stones";
 
 const stoneSwatches = stones.slice(0, 6);
-const cabinetSwatches = [1, 2, 3, 4].map((n) => `[Cabinet finish photo ${n}]`);
+const cabinetSwatches = [0, 3, 4, 9].map((i) => cabinets[i]);
 
-const collections: { title: string; text: string; photo: string; image?: { src: string; alt: string }; href: string }[] = [
+const collections: {
+  title: string;
+  text: string;
+  image?: { src: string; alt: string };
+  doors?: { name: string; src: string }[];
+  href: string;
+}[] = [
   {
     title: "Stone Countertops",
     text: "Countertops for kitchens, bathrooms, islands and bars, chosen to match the way you live.",
-    photo: "[Photo: stone countertop]",
     image: { src: "/client/补资料-Calacata-Montana.webp", alt: "Calacata Montana stone slab close-up" },
     href: "/products/stone",
   },
   {
     title: "Cabinets",
     text: "Kitchen and bathroom cabinetry that pairs with your countertop for one finished look.",
-    photo: "[Photo: kitchen cabinets]",
+    doors: [cabinets[1], cabinets[11], cabinets[3]],
     href: "/products/cabinets",
   },
 ];
@@ -40,16 +46,24 @@ const stats = [
   { value: site.serviceArea, label: "Areas we serve" },
 ];
 
-function SwatchGrid({ labels, cols }: { labels: string[]; cols: string }) {
+function SwatchGrid({ items, cols }: { items: { name: string; src: string }[]; cols: string }) {
   return (
     <ul className={`mt-12 grid gap-3 sm:gap-4 ${cols}`}>
-      {labels.map((label) => (
-        <li key={label}>
+      {items.map(({ name, src }) => (
+        <li key={name}>
           <Link
             href="/products/cabinets"
             className="block rounded-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg"
           >
-            <PhotoPlaceholder label={label} className="aspect-[3/5] w-full" />
+            <img
+              src={src}
+              alt={`${name} cabinet door sample`}
+              loading="lazy"
+              className="aspect-[1/2] w-full rounded-sm border border-border object-cover"
+            />
+            <span className="mt-2 block text-center text-xs font-semibold uppercase tracking-[0.12em] text-ink sm:text-sm">
+              {name}
+            </span>
           </Link>
         </li>
       ))}
@@ -138,7 +152,12 @@ export default function Home() {
             title="Cabinet finish colors"
             intro="Choose from 15 cabinet styles and colors that pair with your countertop for one finished look."
           />
-          <SwatchGrid labels={cabinetSwatches} cols="mx-auto max-w-4xl grid-cols-2 sm:grid-cols-4" />
+          <SwatchGrid items={cabinetSwatches} cols="mx-auto max-w-4xl grid-cols-2 sm:grid-cols-4" />
+          <div className="mt-10 flex justify-center">
+            <ButtonLink href="/products/cabinets" variant="outline">
+              See all cabinet colors
+            </ButtonLink>
+          </div>
         </div>
       </section>
 
@@ -149,17 +168,16 @@ export default function Home() {
             intro="Countertops and cabinets are the heart of a kitchen or bath. Working with one company keeps colors, sizes and timing in step."
           />
           <div className="mt-12 grid gap-6 md:grid-cols-2">
-            {collections.map(({ title, text, photo, image, href }) => (
+            {collections.map(({ title, text, image, doors, href }) => (
               <Link
                 key={title}
                 href={href}
                 className="group flex flex-col overflow-hidden rounded-sm bg-card shadow-md transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg"
               >
-                {image ? (
+                {image && (
                   <img src={image.src} alt={image.alt} loading="lazy" className="aspect-[16/10] w-full object-cover" />
-                ) : (
-                  <PhotoPlaceholder label={photo} className="aspect-[16/10] rounded-none border-0" />
                 )}
+                {doors && <CabinetDoorStrip doors={doors} className="aspect-[16/10] w-full" />}
                 <div className="flex flex-1 flex-col items-center p-6 text-center md:p-8">
                   <h3 className="text-xl font-semibold uppercase tracking-[0.12em] text-ink">{title}</h3>
                   <p className="mt-3 text-muted-foreground">{text}</p>
