@@ -15,21 +15,36 @@ export function Footer() {
           </p>
           <p className="mt-5 max-w-xs">Stone countertops and cabinets for kitchens, bathrooms and more.</p>
         </div>
-        <nav aria-label="Footer">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white">Explore</p>
-          <ul className="mt-4 space-y-2">
-            {nav.map((item) => (
-              <li key={item.href}>
+        <div className="grid grid-cols-2 gap-6">
+          <nav aria-label="Footer">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white">Explore</p>
+            <ul className="mt-4 space-y-2">
+              {nav.map((item) => (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    className="rounded text-sm font-medium uppercase tracking-[0.15em] transition-colors duration-200 hover:text-white"
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+          <nav aria-label="Legal">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white">Legal</p>
+            <ul className="mt-4 space-y-2">
+              <li>
                 <Link
-                  href={item.href}
+                  href="/terms"
                   className="rounded text-sm font-medium uppercase tracking-[0.15em] transition-colors duration-200 hover:text-white"
                 >
-                  {item.label}
+                  Terms of Use
                 </Link>
               </li>
-            ))}
-          </ul>
-        </nav>
+            </ul>
+          </nav>
+        </div>
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white">
             For expert guidance, contact us
