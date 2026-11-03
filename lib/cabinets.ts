@@ -12,7 +12,7 @@ const items: [name: string, file: string][] = [
   ["Double Slim Ivory", "Double-Slim-Ivory.webp"],
   ["Double Slim Oak", "Double-Slim-Oak.webp"],
   ["Double Slim Mocha", "Double-Slim-Mocha.webp"],
-  ["Vanilla Shaker", "Vanilla-Shaker.webp"],
+  ["Vanilla Shaker", "Vanilla-Shaker.png"],
 ];
 
 export const cabinets = items.map(([name, file]) => ({
