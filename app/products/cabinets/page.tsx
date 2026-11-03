@@ -13,7 +13,7 @@ export default function CabinetsPage() {
       <PageHero
         eyebrow="Products · Cabinets"
         title="Kitchen and bathroom cabinets"
-        intro="15 cabinet styles and colors to choose from, planned together with your countertop for one finished look."
+        intro={`${cabinets.length} cabinet styles and colors to choose from, planned together with your countertop for one finished look.`}
       />
       <section className="bg-white py-16 md:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
