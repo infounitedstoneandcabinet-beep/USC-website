@@ -31,12 +31,9 @@ const sections = [
 export default function TermsPage() {
   return (
     <>
-      <PageHero eyebrow="Legal" title="Terms of Use" intro="Last updated: [Effective date]" />
+      <PageHero eyebrow="Legal" title="Terms of Use" intro="Last updated: November 1, 2026" />
       <section className="bg-white py-16 md:py-24">
         <div className="mx-auto max-w-3xl space-y-10 px-4 sm:px-6">
-          <p className="rounded-sm border border-dashed border-slate-400 bg-card p-4 text-muted-foreground">
-            [Full terms of use text reviewed by your legal adviser]
-          </p>
           {sections.map(({ title, text }) => (
             <div key={title}>
               <h2 className="text-xl font-semibold uppercase tracking-[0.08em] text-ink">{title}</h2>
