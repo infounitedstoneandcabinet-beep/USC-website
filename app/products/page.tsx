@@ -1,19 +1,34 @@
 import type { Metadata } from "next";
-import { ArrowRight, Check, Droplets, LayoutGrid } from "lucide-react";
+import Link from "next/link";
+import { ArrowRight, Bath, Check, Droplets, LayoutGrid, ShowerHead } from "lucide-react";
 import { ButtonLink } from "@/components/button-link";
 import { CabinetDoorStrip } from "@/components/cabinet-door-strip";
 import { PhotoPlaceholder } from "@/components/photo-placeholder";
 import { CtaBand, PageHero, SectionHeading } from "@/components/sections";
 import { cabinets } from "@/lib/cabinets";
+import { bathroomSinks, faucets, kitchenSinks } from "@/lib/fixtures";
 import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = { title: "Products" };
 
-const extras = [
+const extras: { icon: typeof Droplets; title: string; text: string; href?: string }[] = [
   {
     icon: Droplets,
-    title: "Sinks",
-    text: "Stainless steel kitchen sinks and ceramic bathroom sinks, with 20 options to choose from.",
+    title: "Kitchen sinks",
+    text: `Stainless steel, black stainless and white farmhouse sinks, ${kitchenSinks.length} models to choose from.`,
+    href: "/products/kitchen-sinks",
+  },
+  {
+    icon: Bath,
+    title: "Bathroom sinks",
+    text: `Ceramic undermount and drop-in vanity sinks, ${bathroomSinks.length} models to choose from.`,
+    href: "/products/bathroom-sinks",
+  },
+  {
+    icon: ShowerHead,
+    title: "Faucets & drains",
+    text: `Kitchen faucets, sink drains and disposal flanges, ${faucets.length} models to choose from.`,
+    href: "/products/faucets",
   },
   { icon: LayoutGrid, title: "Flooring", text: "Flooring in 30+ colors to complete your room." },
 ];
@@ -109,15 +124,23 @@ export default function ProductsPage() {
       ))}
       <section className="bg-white py-16 md:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
-          <SectionHeading eyebrow="Also available" title="Sinks and flooring" />
+          <SectionHeading eyebrow="Also available" title="Sinks, faucets and flooring" />
           <ul className="mx-auto mt-12 grid max-w-4xl gap-6 md:grid-cols-2">
-            {extras.map(({ icon: Icon, title, text }) => (
+            {extras.map(({ icon: Icon, title, text, href }) => (
               <li key={title} className="flex flex-col items-center rounded-sm bg-card p-8 text-center shadow-sm">
                 <span className="grid size-12 place-items-center rounded-full border border-slate-300 text-primary">
                   <Icon aria-hidden="true" className="size-5" />
                 </span>
                 <h3 className="mt-4 text-lg font-semibold uppercase tracking-[0.08em] text-ink">{title}</h3>
                 <p className="mt-2 text-muted-foreground">{text}</p>
+                {href && (
+                  <Link
+                    href={href}
+                    className="mt-4 inline-flex items-center gap-2 font-heading text-sm font-semibold uppercase tracking-[0.12em] text-primary hover:underline"
+                  >
+                    View models <ArrowRight aria-hidden="true" className="size-4" />
+                  </Link>
+                )}
               </li>
             ))}
           </ul>

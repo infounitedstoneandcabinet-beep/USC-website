@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { CtaBand, PageHero } from "@/components/sections";
+import { CtaBand, PageHero, SectionHeading } from "@/components/sections";
+import { cabinetRooms } from "@/lib/cabinet-rooms";
 import { showroom } from "@/lib/showroom";
 
 export const metadata: Metadata = { title: "Gallery" };
@@ -34,6 +35,32 @@ export default function GalleryPage() {
             </li>
           ))}
         </ul>
+      </section>
+      <section className="bg-background py-16 md:py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6">
+          <SectionHeading
+            eyebrow="Cabinets"
+            title="Cabinet designs"
+            intro="Finished kitchens, bathrooms and more, labeled with the cabinet color shown."
+          />
+          <ul className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {cabinetRooms.map(({ src, alt, cabinet }) => (
+              <li key={src}>
+                <figure className="group relative h-full overflow-hidden rounded-sm shadow-sm">
+                  <img
+                    src={src}
+                    alt={alt}
+                    loading="lazy"
+                    className="aspect-[4/3] w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                  />
+                  <figcaption className="absolute bottom-0 left-0 bg-white/95 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-ink">
+                    {cabinet}
+                  </figcaption>
+                </figure>
+              </li>
+            ))}
+          </ul>
+        </div>
       </section>
       <CtaBand />
     </>

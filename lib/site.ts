@@ -35,6 +35,9 @@ export const nav: NavItem[] = [
     children: [
       { href: "/products/stone", label: "Stone" },
       { href: "/products/cabinets", label: "Cabinets" },
+      { href: "/products/kitchen-sinks", label: "Kitchen Sinks" },
+      { href: "/products/bathroom-sinks", label: "Bathroom Sinks" },
+      { href: "/products/faucets", label: "Faucets & Drains" },
     ],
   },
   { href: "/gallery", label: "Gallery" },
