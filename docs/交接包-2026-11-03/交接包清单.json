@@ -1,0 +1,834 @@
+{
+ "format": "wuwei-site-handover",
+ "version": 1,
+ "exportedAt": "2026-11-04T00:25:45.578Z",
+ "site": {
+  "name": "United Stone & Cabinet",
+  "brief": "https://bestcheerstone.com/ 喜欢这个网站的参考设计和排版",
+  "style": "让 UI-UX Pro Max 推荐",
+  "brandColor": null,
+  "githubRepo": "https://github.com/infounitedstoneandcabinet-beep/USC-website",
+  "liveUrl": null,
+  "vercelProject": null,
+  "commitEmail": null
+ },
+ "pushed": {
+  "version": 4,
+  "commit": "a33c5738f3308d0cd32bfb08d9c50661dfb7f644",
+  "at": "2026-11-03T23:44:01.937Z"
+ },
+ "files": [
+  {
+   "path": "04-参考网站/参考-bestcheerstone.com-手机.png",
+   "role": "reference",
+   "name": "参考-bestcheerstone.com-手机.png",
+   "size": 370567,
+   "sha256": "f8784fa5f77e7942a6ca0240b340776102c172afda1d2505b9c89f00c7adba5d"
+  },
+  {
+   "path": "04-参考网站/参考-bestcheerstone.com-桌面.png",
+   "role": "reference",
+   "name": "参考-bestcheerstone.com-桌面.png",
+   "size": 1045082,
+   "sha256": "7889a799a608d65009242504534216ce9c062a9fde0e6e23d71c83de3d886043"
+  },
+  {
+   "path": "04-参考网站/参考-bestcheerstone.com.md",
+   "role": "reference",
+   "name": "参考-bestcheerstone.com.md",
+   "size": 1468,
+   "sha256": "a257f6f2f419889f948c20864bb4432a3c0f0c66b9133d1ec84f08291723d605"
+  },
+  {
+   "path": "02-资料/补资料-0059a021b7942290c10937e0223b851b.png",
+   "role": "material",
+   "name": "补资料-0059a021b7942290c10937e0223b851b.png",
+   "size": 10603,
+   "sha256": "8769231fbef9ec92e19e529afeac17479fda62da1138e761b49e3d28579f126f"
+  },
+  {
+   "path": "02-资料/补资料-4984cdcd5e963ef2f3deea3f4cf25208-2.webp",
+   "role": "material",
+   "name": "补资料-4984cdcd5e963ef2f3deea3f4cf25208-2.webp",
+   "size": 201990,
+   "sha256": "496aa932c7c61acda346e8abc6f0f673c54f7d983360b43204db73f5efc98092"
+  },
+  {
+   "path": "02-资料/补资料-4984cdcd5e963ef2f3deea3f4cf25208.webp",
+   "role": "material",
+   "name": "补资料-4984cdcd5e963ef2f3deea3f4cf25208.webp",
+   "size": 201990,
+   "sha256": "496aa932c7c61acda346e8abc6f0f673c54f7d983360b43204db73f5efc98092"
+  },
+  {
+   "path": "02-资料/补资料-6733ceae310c0e82b0ce95a8198f4edb-2.jpg",
+   "role": "material",
+   "name": "补资料-6733ceae310c0e82b0ce95a8198f4edb-2.jpg",
+   "size": 447064,
+   "sha256": "b487e005ee13623d7690e7a7ff18f0410acfb9eaa8372137dccc4a4221ca3a9d"
+  },
+  {
+   "path": "02-资料/补资料-6733ceae310c0e82b0ce95a8198f4edb.jpg",
+   "role": "material",
+   "name": "补资料-6733ceae310c0e82b0ce95a8198f4edb.jpg",
+   "size": 447064,
+   "sha256": "b487e005ee13623d7690e7a7ff18f0410acfb9eaa8372137dccc4a4221ca3a9d"
+  },
+  {
+   "path": "02-资料/补资料-8d0f48a97735b1ad77d2b86d588d3274.png",
+   "role": "material",
+   "name": "补资料-8d0f48a97735b1ad77d2b86d588d3274.png",
+   "size": 4418,
+   "sha256": "4c43e6b3a6ddb0d6030dff949f245710645ba0345ff747154505a9f24aa5168a"
+  },
+  {
+   "path": "02-资料/补资料-Aran-white-2.webp",
+   "role": "material",
+   "name": "补资料-Aran-white-2.webp",
+   "size": 28222,
+   "sha256": "1aa1f1fbfb3f2bf07f363f775591339804e4e8169360822233ac56f59c1715c1"
+  },
+  {
+   "path": "02-资料/补资料-Aran-white.webp",
+   "role": "material",
+   "name": "补资料-Aran-white.webp",
+   "size": 28222,
+   "sha256": "1aa1f1fbfb3f2bf07f363f775591339804e4e8169360822233ac56f59c1715c1"
+  },
+  {
+   "path": "02-资料/补资料-Bianco-Pietra-2.webp",
+   "role": "material",
+   "name": "补资料-Bianco-Pietra-2.webp",
+   "size": 85706,
+   "sha256": "fc40c6ae3a11244b800d663331ab5814f0f9e573de5ca2bcc7b9788e0c6b7054"
+  },
+  {
+   "path": "02-资料/补资料-Bianco-Pietra.webp",
+   "role": "material",
+   "name": "补资料-Bianco-Pietra.webp",
+   "size": 85706,
+   "sha256": "fc40c6ae3a11244b800d663331ab5814f0f9e573de5ca2bcc7b9788e0c6b7054"
+  },
+  {
+   "path": "02-资料/补资料-Bianco-Swan-2.webp",
+   "role": "material",
+   "name": "补资料-Bianco-Swan-2.webp",
+   "size": 12914,
+   "sha256": "ed85f341385fe9c3fb569f8fe085bae68ea524ab938dee63c36cd2ffb6f2e2c1"
+  },
+  {
+   "path": "02-资料/补资料-Bianco-Swan.webp",
+   "role": "material",
+   "name": "补资料-Bianco-Swan.webp",
+   "size": 12914,
+   "sha256": "ed85f341385fe9c3fb569f8fe085bae68ea524ab938dee63c36cd2ffb6f2e2c1"
+  },
+  {
+   "path": "02-资料/补资料-Black-Shaker-2.png",
+   "role": "material",
+   "name": "补资料-Black-Shaker-2.png",
+   "size": 16495,
+   "sha256": "e9298c6910fe4f3e0a7b114404eaa1814173c6cc54b68d82143cc7fbd76e24df"
+  },
+  {
+   "path": "02-资料/补资料-Black-Shaker.png",
+   "role": "material",
+   "name": "补资料-Black-Shaker.png",
+   "size": 2941,
+   "sha256": "c26f09e804948b83661a957bb65545de9d6e4074c0a96628de206bfd7ab6eab3"
+  },
+  {
+   "path": "02-资料/补资料-Black-Star-2.jpg",
+   "role": "material",
+   "name": "补资料-Black-Star-2.jpg",
+   "size": 186258,
+   "sha256": "7c326e92e296ec7af9d59a79f5213258cf60451eda22aa2eba856f011fe36cdc"
+  },
+  {
+   "path": "02-资料/补资料-Black-Star.jpg",
+   "role": "material",
+   "name": "补资料-Black-Star.jpg",
+   "size": 186258,
+   "sha256": "7c326e92e296ec7af9d59a79f5213258cf60451eda22aa2eba856f011fe36cdc"
+  },
+  {
+   "path": "02-资料/补资料-Blue-Shaker-2.png",
+   "role": "material",
+   "name": "补资料-Blue-Shaker-2.png",
+   "size": 20676,
+   "sha256": "ccd7cb76d9b37ab41686d657b18cc04312462dbf2fe7ac4f01291c3be7ebe95f"
+  },
+  {
+   "path": "02-资料/补资料-Blue-Shaker.png",
+   "role": "material",
+   "name": "补资料-Blue-Shaker.png",
+   "size": 2501,
+   "sha256": "0d2cc823026f0af489256ff532d0bcb9a19e4eeaa726ebcd0bdbaf745d1576dc"
+  },
+  {
+   "path": "02-资料/补资料-Calacata-Alaska-1.webp",
+   "role": "material",
+   "name": "补资料-Calacata-Alaska-1.webp",
+   "size": 82972,
+   "sha256": "9f2d5deb6893b70acea95081c5d2fbcfde68aa73389aaa51bccef32e5de4bc03"
+  },
+  {
+   "path": "02-资料/补资料-Calacata-Alaska-2.webp",
+   "role": "material",
+   "name": "补资料-Calacata-Alaska-2.webp",
+   "size": 33638,
+   "sha256": "64595b142cc59bd58545a5eee933cc238ca1a2e324fed576b1b825754e134d06"
+  },
+  {
+   "path": "02-资料/补资料-Calacata-Alaska.webp",
+   "role": "material",
+   "name": "补资料-Calacata-Alaska.webp",
+   "size": 33638,
+   "sha256": "64595b142cc59bd58545a5eee933cc238ca1a2e324fed576b1b825754e134d06"
+  },
+  {
+   "path": "02-资料/补资料-Calacata-Alto-2.webp",
+   "role": "material",
+   "name": "补资料-Calacata-Alto-2.webp",
+   "size": 22204,
+   "sha256": "3d8bf218aa91e61ce369cf71cec1ef346722abdef96eb9d081b75ebb974843e6"
+  },
+  {
+   "path": "02-资料/补资料-Calacata-Alto.webp",
+   "role": "material",
+   "name": "补资料-Calacata-Alto.webp",
+   "size": 22204,
+   "sha256": "3d8bf218aa91e61ce369cf71cec1ef346722abdef96eb9d081b75ebb974843e6"
+  },
+  {
+   "path": "02-资料/补资料-Calacata-Borghini-2.webp",
+   "role": "material",
+   "name": "补资料-Calacata-Borghini-2.webp",
+   "size": 97988,
+   "sha256": "83c878162ae197a719d52ea016d149738cc7e7bfa6692971312c3ef23e1b7fbc"
+  },
+  {
+   "path": "02-资料/补资料-Calacata-Borghini-3.webp",
+   "role": "material",
+   "name": "补资料-Calacata-Borghini-3.webp",
+   "size": 215510,
+   "sha256": "288f9e192c5bdd9dacdc3c8399d15900b4d7f6916bee422a1bc4da70364cf910"
+  },
+  {
+   "path": "02-资料/补资料-Calacata-Borghini.webp",
+   "role": "material",
+   "name": "补资料-Calacata-Borghini.webp",
+   "size": 97988,
+   "sha256": "83c878162ae197a719d52ea016d149738cc7e7bfa6692971312c3ef23e1b7fbc"
+  },
+  {
+   "path": "02-资料/补资料-Calacata-Caramel-1.webp",
+   "role": "material",
+   "name": "补资料-Calacata-Caramel-1.webp",
+   "size": 81576,
+   "sha256": "4e64ad58e14f252b043187a4796efe8013ac633a6ccabca09162bc73f18b59f3"
+  },
+  {
+   "path": "02-资料/补资料-Calacata-Caramel-2.webp",
+   "role": "material",
+   "name": "补资料-Calacata-Caramel-2.webp",
+   "size": 17094,
+   "sha256": "7e7db231a992aa2f1f0778dd298cae635b5699d0ffecabd1cf43e7627276f533"
+  },
+  {
+   "path": "02-资料/补资料-Calacata-Caramel.webp",
+   "role": "material",
+   "name": "补资料-Calacata-Caramel.webp",
+   "size": 17094,
+   "sha256": "7e7db231a992aa2f1f0778dd298cae635b5699d0ffecabd1cf43e7627276f533"
+  },
+  {
+   "path": "02-资料/补资料-Calacata-Elegant-2.png",
+   "role": "material",
+   "name": "补资料-Calacata-Elegant-2.png",
+   "size": 495040,
+   "sha256": "bcbf758c94221a75a3ac0980ef53c17f9cd0f2b8b4a20b0214c377e51f322566"
+  },
+  {
+   "path": "02-资料/补资料-Calacata-Elegant.png",
+   "role": "material",
+   "name": "补资料-Calacata-Elegant.png",
+   "size": 495040,
+   "sha256": "bcbf758c94221a75a3ac0980ef53c17f9cd0f2b8b4a20b0214c377e51f322566"
+  },
+  {
+   "path": "02-资料/补资料-Calacata-Laza-1-2.webp",
+   "role": "material",
+   "name": "补资料-Calacata-Laza-1-2.webp",
+   "size": 151030,
+   "sha256": "73d3f8764ffae66831b94230cd9f428eff360c1151ba2a5e6d79e59c43b1e152"
+  },
+  {
+   "path": "02-资料/补资料-Calacata-Laza-1.webp",
+   "role": "material",
+   "name": "补资料-Calacata-Laza-1.webp",
+   "size": 145238,
+   "sha256": "8db931795f3e99f924654d023b9155c2338f5144104ed33bcc12406a56ad752f"
+  },
+  {
+   "path": "02-资料/补资料-Calacata-Laza-2.webp",
+   "role": "material",
+   "name": "补资料-Calacata-Laza-2.webp",
+   "size": 72628,
+   "sha256": "37d497d6bb5f0ab7bfdc86bc7bfb24a5280607aee4d90b87561e051141835430"
+  },
+  {
+   "path": "02-资料/补资料-Calacata-Laza.webp",
+   "role": "material",
+   "name": "补资料-Calacata-Laza.webp",
+   "size": 72628,
+   "sha256": "37d497d6bb5f0ab7bfdc86bc7bfb24a5280607aee4d90b87561e051141835430"
+  },
+  {
+   "path": "02-资料/补资料-Calacata-Montana-1.webp",
+   "role": "material",
+   "name": "补资料-Calacata-Montana-1.webp",
+   "size": 160982,
+   "sha256": "038efe6ef5847823495756551588d134027d694808bda247f7c6e7fda4d2eb87"
+  },
+  {
+   "path": "02-资料/补资料-Calacata-Montana-2.webp",
+   "role": "material",
+   "name": "补资料-Calacata-Montana-2.webp",
+   "size": 64028,
+   "sha256": "c6a4be5ee65c256127dfc29c85e9bdcb21d97a240daa32ec5c7e7baf541ce4ff"
+  },
+  {
+   "path": "02-资料/补资料-Calacata-Montana.webp",
+   "role": "material",
+   "name": "补资料-Calacata-Montana.webp",
+   "size": 64028,
+   "sha256": "c6a4be5ee65c256127dfc29c85e9bdcb21d97a240daa32ec5c7e7baf541ce4ff"
+  },
+  {
+   "path": "02-资料/补资料-Calacata-Oceanic-2.webp",
+   "role": "material",
+   "name": "补资料-Calacata-Oceanic-2.webp",
+   "size": 79476,
+   "sha256": "5183df89e8d4444cd116affe989370ca448ca3f2a8ac270eb5a9a7956b6bed11"
+  },
+  {
+   "path": "02-资料/补资料-Calacata-Oceanic.webp",
+   "role": "material",
+   "name": "补资料-Calacata-Oceanic.webp",
+   "size": 79476,
+   "sha256": "5183df89e8d4444cd116affe989370ca448ca3f2a8ac270eb5a9a7956b6bed11"
+  },
+  {
+   "path": "02-资料/补资料-Calacata-Rocky-1.webp",
+   "role": "material",
+   "name": "补资料-Calacata-Rocky-1.webp",
+   "size": 177804,
+   "sha256": "832c8f16849b2c8142d79fb616ac19023a05078b6ada775708affe9f9d35d1f5"
+  },
+  {
+   "path": "02-资料/补资料-Calacata-Rocky-2.webp",
+   "role": "material",
+   "name": "补资料-Calacata-Rocky-2.webp",
+   "size": 20826,
+   "sha256": "d1f2433ca73f777d694df7fa6171ae34b8c6f54ec89faa2ecba4c0dbc841d179"
+  },
+  {
+   "path": "02-资料/补资料-Calacata-Rocky.webp",
+   "role": "material",
+   "name": "补资料-Calacata-Rocky.webp",
+   "size": 20826,
+   "sha256": "d1f2433ca73f777d694df7fa6171ae34b8c6f54ec89faa2ecba4c0dbc841d179"
+  },
+  {
+   "path": "02-资料/补资料-Calacata-Taj-2.webp",
+   "role": "material",
+   "name": "补资料-Calacata-Taj-2.webp",
+   "size": 103702,
+   "sha256": "22867dcff013b3674f4ef84d83e7dac9d8d77c44baacb20b922e7b88f5d04a8c"
+  },
+  {
+   "path": "02-资料/补资料-Calacata-Taj.webp",
+   "role": "material",
+   "name": "补资料-Calacata-Taj.webp",
+   "size": 103702,
+   "sha256": "22867dcff013b3674f4ef84d83e7dac9d8d77c44baacb20b922e7b88f5d04a8c"
+  },
+  {
+   "path": "02-资料/补资料-Calacata-Vega-1-2.webp",
+   "role": "material",
+   "name": "补资料-Calacata-Vega-1-2.webp",
+   "size": 172028,
+   "sha256": "9742723d8dbcd453c7f53b4a4b3d5201a33487a599b1860b4a18662d977333f2"
+  },
+  {
+   "path": "02-资料/补资料-Calacata-Vega-1.webp",
+   "role": "material",
+   "name": "补资料-Calacata-Vega-1.webp",
+   "size": 166882,
+   "sha256": "b379d9a0e3ba0f57fe9220d852efeeebf13ba7334d836835dfa8cbd87703b7c3"
+  },
+  {
+   "path": "02-资料/补资料-Calacata-Vega-2.webp",
+   "role": "material",
+   "name": "补资料-Calacata-Vega-2.webp",
+   "size": 43566,
+   "sha256": "3fc79bcdcf3578d407dbf86dd7445ce8bd8569fd4f440bb9f5861267686a7a2c"
+  },
+  {
+   "path": "02-资料/补资料-Calacata-Vega.webp",
+   "role": "material",
+   "name": "补资料-Calacata-Vega.webp",
+   "size": 43566,
+   "sha256": "3fc79bcdcf3578d407dbf86dd7445ce8bd8569fd4f440bb9f5861267686a7a2c"
+  },
+  {
+   "path": "02-资料/补资料-Carrara-White-2.webp",
+   "role": "material",
+   "name": "补资料-Carrara-White-2.webp",
+   "size": 43242,
+   "sha256": "b7814a09f81a9e65e05b634b6b3cfcaee5fcf2efbc290ac259482adf3e56ffaf"
+  },
+  {
+   "path": "02-资料/补资料-Carrara-White.webp",
+   "role": "material",
+   "name": "补资料-Carrara-White.webp",
+   "size": 43242,
+   "sha256": "b7814a09f81a9e65e05b634b6b3cfcaee5fcf2efbc290ac259482adf3e56ffaf"
+  },
+  {
+   "path": "02-资料/补资料-Concrete-Grey-2.jpg",
+   "role": "material",
+   "name": "补资料-Concrete-Grey-2.jpg",
+   "size": 264815,
+   "sha256": "f2fbe4479b57cc7d4838a3c6718a3113cb44ce91735523d13ebdddb8e3f10bb4"
+  },
+  {
+   "path": "02-资料/补资料-Concrete-Grey.jpg",
+   "role": "material",
+   "name": "补资料-Concrete-Grey.jpg",
+   "size": 264815,
+   "sha256": "f2fbe4479b57cc7d4838a3c6718a3113cb44ce91735523d13ebdddb8e3f10bb4"
+  },
+  {
+   "path": "02-资料/补资料-Cream-Shaker.png",
+   "role": "material",
+   "name": "补资料-Cream-Shaker.png",
+   "size": 335594,
+   "sha256": "c40da1fb727a0a16816d8d2836506ffe440edf80afb5656356376372ae96804f"
+  },
+  {
+   "path": "02-资料/补资料-Crystal-White-2.jpg",
+   "role": "material",
+   "name": "补资料-Crystal-White-2.jpg",
+   "size": 246323,
+   "sha256": "2307b3926d16fbf4149a6ecd4bab5365b4448de88ea27adb1c054c584f7ec1cc"
+  },
+  {
+   "path": "02-资料/补资料-Crystal-White.jpg",
+   "role": "material",
+   "name": "补资料-Crystal-White.jpg",
+   "size": 246323,
+   "sha256": "2307b3926d16fbf4149a6ecd4bab5365b4448de88ea27adb1c054c584f7ec1cc"
+  },
+  {
+   "path": "02-资料/补资料-Dark-Gray-Shaker.png",
+   "role": "material",
+   "name": "补资料-Dark-Gray-Shaker.png",
+   "size": 32941,
+   "sha256": "9221b5bd2bd92ef77694e2fdf9dfda595f5618bf74f0ad3761ebca5241777364"
+  },
+  {
+   "path": "02-资料/补资料-Double-Slim-Ivory.webp",
+   "role": "material",
+   "name": "补资料-Double-Slim-Ivory.webp",
+   "size": 43172,
+   "sha256": "a624b414a8a76d03270e9913f0c00c9531a89815e34a215ed45992a36aaa8203"
+  },
+  {
+   "path": "02-资料/补资料-Double-Slim-Mocha.webp",
+   "role": "material",
+   "name": "补资料-Double-Slim-Mocha.webp",
+   "size": 43876,
+   "sha256": "9191dd93affebca2b6ddf10606b16681fc283bf545d693c21bb262959c64d235"
+  },
+  {
+   "path": "02-资料/补资料-Double-Slim-Oak.webp",
+   "role": "material",
+   "name": "补资料-Double-Slim-Oak.webp",
+   "size": 50444,
+   "sha256": "a42bb5e68ae2afad5496bb5da00d62fc4882db005339468538518b72e77d9dcf"
+  },
+  {
+   "path": "02-资料/补资料-Fleece-2.webp",
+   "role": "material",
+   "name": "补资料-Fleece-2.webp",
+   "size": 129144,
+   "sha256": "4580c58c95d17dd8fc7dc8512b947b6fe8394c7abe107b56940dc04c0007b04b"
+  },
+  {
+   "path": "02-资料/补资料-Fleece.webp",
+   "role": "material",
+   "name": "补资料-Fleece.webp",
+   "size": 129144,
+   "sha256": "4580c58c95d17dd8fc7dc8512b947b6fe8394c7abe107b56940dc04c0007b04b"
+  },
+  {
+   "path": "02-资料/补资料-French-Grey-1.webp",
+   "role": "material",
+   "name": "补资料-French-Grey-1.webp",
+   "size": 133420,
+   "sha256": "1de4d6ba4e0163256b2e34169a7b6810fa86e72446aed0701415e5ee487637ef"
+  },
+  {
+   "path": "02-资料/补资料-French-Grey-2.webp",
+   "role": "material",
+   "name": "补资料-French-Grey-2.webp",
+   "size": 5308,
+   "sha256": "af6968c3c9741d467e9f61f88d89a7542c375328510232983d34f3e24e06209c"
+  },
+  {
+   "path": "02-资料/补资料-French-Grey.webp",
+   "role": "material",
+   "name": "补资料-French-Grey.webp",
+   "size": 5308,
+   "sha256": "af6968c3c9741d467e9f61f88d89a7542c375328510232983d34f3e24e06209c"
+  },
+  {
+   "path": "02-资料/补资料-Light-Gray-Shaker.png",
+   "role": "material",
+   "name": "补资料-Light-Gray-Shaker.png",
+   "size": 31138,
+   "sha256": "bf0f07a14f1b60d4f56b4b9daf8cbd9372cee6df54962a3dba716d67b5081054"
+  },
+  {
+   "path": "02-资料/补资料-Light-Sage-Shaker.png",
+   "role": "material",
+   "name": "补资料-Light-Sage-Shaker.png",
+   "size": 47549,
+   "sha256": "65d36ec966c8511e7d15e68f36fb589a75e7d578aeaf53d77ed30d4b4f03c8c8"
+  },
+  {
+   "path": "02-资料/补资料-Luccid-Gold-1.webp",
+   "role": "material",
+   "name": "补资料-Luccid-Gold-1.webp",
+   "size": 186006,
+   "sha256": "0f7598a32f5d4cb644bebd186ae50e9581f0d4d5687024dc12837cd79a9b424d"
+  },
+  {
+   "path": "02-资料/补资料-Luccid-Gold-2.webp",
+   "role": "material",
+   "name": "补资料-Luccid-Gold-2.webp",
+   "size": 104944,
+   "sha256": "fa9cbdcf2eb7c95ef4bef4f19ff7fe5b8260978962c21a581f4cd06b8d986d98"
+  },
+  {
+   "path": "02-资料/补资料-Luccid-Gold.webp",
+   "role": "material",
+   "name": "补资料-Luccid-Gold.webp",
+   "size": 104944,
+   "sha256": "fa9cbdcf2eb7c95ef4bef4f19ff7fe5b8260978962c21a581f4cd06b8d986d98"
+  },
+  {
+   "path": "02-资料/补资料-Pale-Green-Shaker.png",
+   "role": "material",
+   "name": "补资料-Pale-Green-Shaker.png",
+   "size": 269999,
+   "sha256": "dc27a790f9fe22bcaddba4aada19042358a34848c51027e43bc6cfea4571e595"
+  },
+  {
+   "path": "02-资料/补资料-Perla-Venata-1.webp",
+   "role": "material",
+   "name": "补资料-Perla-Venata-1.webp",
+   "size": 182596,
+   "sha256": "0464c57542c7780d70377219b941768749bc4cdaee95377880c5db5b38283618"
+  },
+  {
+   "path": "02-资料/补资料-Perla-Venata-2.webp",
+   "role": "material",
+   "name": "补资料-Perla-Venata-2.webp",
+   "size": 150168,
+   "sha256": "a1aac47f733fcc09b50b0947b136728601c9dc9dee6a0f1a74f56db5856c9c2f"
+  },
+  {
+   "path": "02-资料/补资料-Perla-Venata.webp",
+   "role": "material",
+   "name": "补资料-Perla-Venata.webp",
+   "size": 150168,
+   "sha256": "a1aac47f733fcc09b50b0947b136728601c9dc9dee6a0f1a74f56db5856c9c2f"
+  },
+  {
+   "path": "02-资料/补资料-Pure-White.webp",
+   "role": "material",
+   "name": "补资料-Pure-White.webp",
+   "size": 137748,
+   "sha256": "94e1b2574a5e6005eda3d4bb82706600d9664d89ea391bd240cc4f28587d68d0"
+  },
+  {
+   "path": "02-资料/补资料-Snow-White.webp",
+   "role": "material",
+   "name": "补资料-Snow-White.webp",
+   "size": 175132,
+   "sha256": "4627adf66fd9ccc5eed2001683d9764e3728e7a13af1af726ea1d78e72e5fa5b"
+  },
+  {
+   "path": "02-资料/补资料-Vanilla-Shaker.png",
+   "role": "material",
+   "name": "补资料-Vanilla-Shaker.png",
+   "size": 250464,
+   "sha256": "f85c743908b0e5570b707a88a584a0150852c0ac4b82eac6b9eafee82f2f08cf"
+  },
+  {
+   "path": "02-资料/补资料-Vanilla-Shaker.webp",
+   "role": "material",
+   "name": "补资料-Vanilla-Shaker.webp",
+   "size": 4926,
+   "sha256": "04d43577ad727f9a2429a25e96feb9c66cc1ee8897bf28bce8ea09eac7dd0c12"
+  },
+  {
+   "path": "02-资料/补资料-Volakas-White-1.webp",
+   "role": "material",
+   "name": "补资料-Volakas-White-1.webp",
+   "size": 207042,
+   "sha256": "d1a6e507329481ba889e2920f43c514ccd7b4888b501d09de3d1709064329467"
+  },
+  {
+   "path": "02-资料/补资料-Volakas-White-2.webp",
+   "role": "material",
+   "name": "补资料-Volakas-White-2.webp",
+   "size": 64648,
+   "sha256": "cfb744afff7ff9bfa1c24451f974f9456ec894a35054fc167c5e28dbe820dedb"
+  },
+  {
+   "path": "02-资料/补资料-Volakas-White.webp",
+   "role": "material",
+   "name": "补资料-Volakas-White.webp",
+   "size": 64648,
+   "sha256": "cfb744afff7ff9bfa1c24451f974f9456ec894a35054fc167c5e28dbe820dedb"
+  },
+  {
+   "path": "02-资料/补资料-White-Oak-Shaker.png",
+   "role": "material",
+   "name": "补资料-White-Oak-Shaker.png",
+   "size": 465130,
+   "sha256": "2218f66cec9be36752961a2a9438e92ee8bf895caddd5fd1fe20d8987ba758cd"
+  },
+  {
+   "path": "02-资料/补资料-White-Shaker.png",
+   "role": "material",
+   "name": "补资料-White-Shaker.png",
+   "size": 30260,
+   "sha256": "fc1d188b9c3642774e592c6a96364f54afa3298124362d77570fad6d9fa3a9a1"
+  },
+  {
+   "path": "02-资料/补资料-b5b0d84d8fc236357bb9c51a03f8b4b9.png",
+   "role": "material",
+   "name": "补资料-b5b0d84d8fc236357bb9c51a03f8b4b9.png",
+   "size": 373332,
+   "sha256": "d677e92ed5d917effff657199b2d6fe80ed6c1b3411a9199378bb01590a28c09"
+  },
+  {
+   "path": "02-资料/补资料-green-shaker.png",
+   "role": "material",
+   "name": "补资料-green-shaker.png",
+   "size": 32557,
+   "sha256": "6b22ab1f0dd41d810abe5c34b6ffc1846f1ef84e86a548cbb827a71584dfdc2f"
+  },
+  {
+   "path": "03-补资料回答.md",
+   "role": "answers",
+   "name": "补资料回答（交接前）.md",
+   "size": 2399,
+   "sha256": "bf379d544c70af0d9fe601de0a5053493d9224a081cfc448e9e95379e2b6e739"
+  },
+  {
+   "path": "06-确认版截图/about-desktop.png",
+   "role": "shot",
+   "name": null,
+   "size": 281962,
+   "sha256": "7901bf0706bf9ba566f2d92dd94b11ed1c27d68cf53cde1a8b789bbe078a0cdd"
+  },
+  {
+   "path": "06-确认版截图/about-phone.png",
+   "role": "shot",
+   "name": null,
+   "size": 195326,
+   "sha256": "a4636f9662721362724f79db09fa8b5f4bbcd83b1ee14246deb38b3772eafa35"
+  },
+  {
+   "path": "06-确认版截图/about-tablet.png",
+   "role": "shot",
+   "name": null,
+   "size": 303839,
+   "sha256": "56690fdb33cb122162dd6d94b1cf876c3ca95a4d5212fda618e4e87743b0a2c9"
+  },
+  {
+   "path": "06-确认版截图/contact-desktop.png",
+   "role": "shot",
+   "name": null,
+   "size": 171061,
+   "sha256": "a374bde2f5b3508e9d6a91241a644c7f736b9dc50a4973049f1b5a6f72fe6615"
+  },
+  {
+   "path": "06-确认版截图/contact-phone.png",
+   "role": "shot",
+   "name": null,
+   "size": 147981,
+   "sha256": "872bda1e4d192dd584a447cd3bde1173ed46387fa7aef1408ce9f34e052a53eb"
+  },
+  {
+   "path": "06-确认版截图/contact-tablet.png",
+   "role": "shot",
+   "name": null,
+   "size": 160911,
+   "sha256": "38280567390b419659c21b17bd61500ff0cc591348d114b54e7a1778e9715ab2"
+  },
+  {
+   "path": "06-确认版截图/gallery-desktop.png",
+   "role": "shot",
+   "name": null,
+   "size": 3219788,
+   "sha256": "b27641d42f6fb13b1510cd0b838d56b6f1e9e98d5e3dbaf783e7fe740b6c184d"
+  },
+  {
+   "path": "06-确认版截图/gallery-phone.png",
+   "role": "shot",
+   "name": null,
+   "size": 931068,
+   "sha256": "eb96a689ba2377a85bf9e74d520ca32c6e97c32d2df327d6d9a0fea330d84c08"
+  },
+  {
+   "path": "06-确认版截图/gallery-tablet.png",
+   "role": "shot",
+   "name": null,
+   "size": 2048940,
+   "sha256": "a9aa4f1b98409ca1f7c4de5c418c1b47296beccf18186c4195c2dcd30186712d"
+  },
+  {
+   "path": "06-确认版截图/home-desktop.png",
+   "role": "shot",
+   "name": null,
+   "size": 1532747,
+   "sha256": "9e3df55a3d9ec37d119a05c6a554f4d168325076f807705c5b97b87b55fedc24"
+  },
+  {
+   "path": "06-确认版截图/home-phone.png",
+   "role": "shot",
+   "name": null,
+   "size": 579104,
+   "sha256": "e0c5c2d5fe06d6e3bfaceeca5601ad94f56061ce8827a481cd61e9509b22dbb1"
+  },
+  {
+   "path": "06-确认版截图/home-tablet.png",
+   "role": "shot",
+   "name": null,
+   "size": 1275316,
+   "sha256": "57f703615fff44f4c248b6bccece57ab617164214eb28ea04aecd205e8bfa4f0"
+  },
+  {
+   "path": "06-确认版截图/products-cabinets-desktop.png",
+   "role": "shot",
+   "name": null,
+   "size": 602881,
+   "sha256": "496b37ee281b568cf00caf3e70adce5ab05c827fe3549623fa43c61b6c9fc808"
+  },
+  {
+   "path": "06-确认版截图/products-cabinets-phone.png",
+   "role": "shot",
+   "name": null,
+   "size": 294178,
+   "sha256": "9e0c7226dcd30950f7ed46d5db8380e59f135525c28fd4d7d9bc7b736bd8cdd2"
+  },
+  {
+   "path": "06-确认版截图/products-cabinets-tablet.png",
+   "role": "shot",
+   "name": null,
+   "size": 427349,
+   "sha256": "a46d9c649b7d17b1b7f0ba35e4b344dd44a8a7c0ebfd16e03966c900cc2e4ec8"
+  },
+  {
+   "path": "06-确认版截图/products-desktop.png",
+   "role": "shot",
+   "name": null,
+   "size": 587783,
+   "sha256": "d0b60f0bed69669e075f5e9478f2af875f5b17a906cf0d689f914eb2b0186bdc"
+  },
+  {
+   "path": "06-确认版截图/products-phone.png",
+   "role": "shot",
+   "name": null,
+   "size": 326017,
+   "sha256": "afe9d65e120cf54426d5ec9839a66392c51b158f63c8ff33a9d9492f09a57602"
+  },
+  {
+   "path": "06-确认版截图/products-stone-desktop.png",
+   "role": "shot",
+   "name": null,
+   "size": 1166846,
+   "sha256": "14b9790576c0dcb72d4f6f7196f2043a8c9e8b5d4ad3bad96236ffadc3fdfb05"
+  },
+  {
+   "path": "06-确认版截图/products-stone-phone.png",
+   "role": "shot",
+   "name": null,
+   "size": 561239,
+   "sha256": "57f7a47f1d71459d2a197873156c020bd22372329d2a62624fa33360ea9dbe4c"
+  },
+  {
+   "path": "06-确认版截图/products-stone-tablet.png",
+   "role": "shot",
+   "name": null,
+   "size": 1168481,
+   "sha256": "ff6d4ecfa783b565fd02d0be61aeaa12bd16d0335f19e2a4f3aa9c7a88301636"
+  },
+  {
+   "path": "06-确认版截图/products-tablet.png",
+   "role": "shot",
+   "name": null,
+   "size": 662913,
+   "sha256": "ed5b31244fbb54edbfd8e63bb8cef2911ee4807895cdd55a4eb04c4c5d96d77e"
+  },
+  {
+   "path": "06-确认版截图/terms-desktop.png",
+   "role": "shot",
+   "name": null,
+   "size": 275933,
+   "sha256": "2bd9e65c703d7714cdee38f31462ff64ee5989755de7ef9f806a62430c282148"
+  },
+  {
+   "path": "06-确认版截图/terms-phone.png",
+   "role": "shot",
+   "name": null,
+   "size": 237458,
+   "sha256": "219cac5913d986bc50f7cd16366955a86a9b8266f1714dc47b8dab86f9749e4b"
+  },
+  {
+   "path": "06-确认版截图/terms-tablet.png",
+   "role": "shot",
+   "name": null,
+   "size": 262243,
+   "sha256": "2d5c7ad7da688cc5ac4016732c7fa104c4dde1a5caed66dcf46f59b0bca498fb"
+  },
+  {
+   "path": "05-建站记录.md",
+   "role": "note",
+   "name": null,
+   "size": 3478,
+   "sha256": "9405c36da4749eb4404daa918a8b0510f49ecb89ff644a486e73e7e0357a3fed"
+  },
+  {
+   "path": "01-建站需求.md",
+   "role": "note",
+   "name": null,
+   "size": 191,
+   "sha256": "df0265c2fad15d3b84daca2b475479c10454385d488383dcad3c6b22769231f9"
+  },
+  {
+   "path": "00-交接说明.md",
+   "role": "note",
+   "name": null,
+   "size": 1543,
+   "sha256": "f9fc50608eece7189943ca2ada724b9466d4e95595001256c92f9247420e2e9e"
+  }
+ ]
+}
