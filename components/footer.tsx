@@ -7,12 +7,15 @@ export function Footer() {
     <footer className="bg-slate-700 text-slate-200">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-3">
         <div>
-          <p className="flex flex-col leading-none text-white">
-            <span className="font-heading text-3xl font-semibold tracking-[0.12em]">UNITED</span>
-            <span className="mt-2 text-xs font-medium uppercase tracking-[0.3em] text-slate-300">
-              Stone &amp; Cabinet
-            </span>
-          </p>
+          <Link href="/" className="inline-block rounded-md" aria-label={`${site.name} home`}>
+            <img
+              src="/brand/usc-logo.webp"
+              alt="United Stone & Cabinet logo"
+              width={640}
+              height={402}
+              className="h-auto w-52"
+            />
+          </Link>
           <p className="mt-5 max-w-xs">Stone countertops and cabinets for kitchens, bathrooms and more.</p>
         </div>
         <div className="grid grid-cols-2 gap-6">
