@@ -13,8 +13,8 @@ export const showroom = [
   { file: "Calacata-Rocky-1.webp", stone: "Calacata Rocky", room: "U-shape kitchen with navy cabinets" },
   { file: "Calacata-Laza-1.webp", stone: "Calacata Laza", room: "Fireplace surround" },
   { file: "Calacata-Alaska-1.webp", stone: "Calacata Alaska", room: "Bathroom vanity top" },
-  { file: "Pure-White.webp", stone: "Pure White", room: "Double bathroom vanity top" },
-  { file: "Snow-White.webp", stone: "Snow White", room: "Double bathroom vanity top" },
+  { file: "Pure-White-room.webp", stone: "Pure White", room: "Double bathroom vanity top" },
+  { file: "Snow-White-room.webp", stone: "Snow White", room: "Double bathroom vanity top" },
 ].map((p) => ({ ...p, src: `/client/补资料-${p.file}`, alt: `${p.room} in ${p.stone} stone` }));
 
 export const heroSlides = showroom.slice(0, 5);
