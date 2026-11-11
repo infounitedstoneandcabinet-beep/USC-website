@@ -9,7 +9,10 @@ import { heroSlides } from "@/lib/showroom";
 import { site } from "@/lib/site";
 import { stones } from "@/lib/stones";
 
-const stoneSwatches = stones.slice(0, 6);
+// Same six colors the home page showed before the detail pages were added.
+const stoneSwatches = ["calacata-elegant", "perla-bianco", "black-star", "calacata-caramel", "carrara-white", "concrete-grey"]
+  .map((slug) => stones.find((s) => s.slug === slug))
+  .filter((s) => s !== undefined);
 const cabinetSwatches = [0, 3, 4, 9].map((i) => cabinets[i]);
 
 const collections: {
@@ -41,7 +44,7 @@ const steps = [
 
 const stats = [
   { value: site.founded, label: "Established" },
-  { value: "40", label: "Quartz colors" },
+  { value: "100+", label: "Quartz colors" },
   { value: "15", label: "Cabinet styles & colors" },
   { value: site.serviceArea, label: "Areas we serve" },
 ];
@@ -135,7 +138,7 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <SectionHeading
             title="Quartz color inspiration"
-            intro="A first look at our 40 quartz colors for your countertops."
+            intro="A first look at our 100+ quartz colors for your countertops, with more coming soon."
           />
           <StoneGrid items={stoneSwatches} />
           <div className="mt-10 flex justify-center">

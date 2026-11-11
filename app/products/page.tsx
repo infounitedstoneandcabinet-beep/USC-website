@@ -52,7 +52,7 @@ const products: {
     title: "Stone countertops",
     text: "A countertop is the surface you use every day. We help you compare colors and finishes so your choice looks right and suits how you cook and clean.",
     uses: ["Kitchen countertops", "Islands and bars", "Bathroom vanity tops"],
-    list: "Quartz countertops in 40 colors to choose from.",
+    list: "Quartz countertops in 100+ colors, with more coming soon.",
     photo: "[Photo: stone slabs or countertop close-up]",
     image: { src: "/client/补资料-Calacata-Elegant.png", alt: "Calacata Elegant stone slab close-up" },
     href: "/products/stone",

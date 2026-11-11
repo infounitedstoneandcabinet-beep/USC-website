@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Check } from "lucide-react";
 import { CtaBand, PageHero, SectionHeading } from "@/components/sections";
 import { stones } from "@/lib/stones";
@@ -13,7 +14,7 @@ export default function StonePage() {
       <PageHero
         eyebrow="Products · Stone"
         title="Stone countertops"
-        intro="Quartz countertops in 40 colors to choose from. Browse a selection below and ask us to see the full range."
+        intro="Quartz countertops in 100+ colors, with more colors coming soon. Tap a color for photos and details, and ask us to see the full range."
       />
       <section className="bg-white py-16 md:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
@@ -27,19 +28,19 @@ export default function StonePage() {
             ))}
           </ul>
           <ul className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6">
-            {stones.map(({ name, src }) => (
-              <li key={name}>
-                <figure>
+            {stones.map(({ name, slug, src }) => (
+              <li key={slug}>
+                <Link href={`/products/stone/${slug}`} className="group block rounded-sm">
                   <img
                     src={src}
                     alt={`${name} stone slab`}
                     loading="lazy"
                     className="aspect-square w-full rounded-sm border border-border object-cover"
                   />
-                  <figcaption className="mt-2 text-center text-xs font-semibold uppercase tracking-[0.12em] text-ink sm:text-sm">
+                  <span className="mt-2 block text-center text-xs font-semibold uppercase tracking-[0.12em] text-ink group-hover:text-primary sm:text-sm">
                     {name}
-                  </figcaption>
-                </figure>
+                  </span>
+                </Link>
               </li>
             ))}
           </ul>
