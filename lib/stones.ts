@@ -1,5 +1,7 @@
+import { showroom } from "./showroom";
+
 // Quartz colors from the owner's price list (Final Price List, 2026-11-10), in price-list order.
-// Photos are the owner's; the first file is the slab photo, the rest are extra slab or room photos.
+// Photos are the owner's: the slab photo first, then every showroom photo of that stone from the gallery.
 export type Stone = {
   name: string;
   slug: string;
@@ -16,41 +18,41 @@ const PE = "Polished / E-Printed" as const;
 
 const toSlug = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
 
-// [name, file base, extra suffixes, extension, available in, finish]
-const rows: [string, string, string[], string, Stone["availableIn"], Stone["finish"]][] = [
-  ["Aran White", "Aran-white", ["-2"], "webp", SP, PO],
-  ["Bianco Swan", "Bianco-Swan", ["-2"], "webp", SP, PO],
-  ["Black Star", "Black-Star", ["-2"], "jpg", SP, PO],
-  ["Calacata Alaska", "Calacata-Alaska", ["-1", "-2"], "webp", SP, PO],
-  ["Calacata Alto", "Calacata-Alto", ["-2"], "webp", SP, PO],
-  ["Calacata Caramel", "Calacata-Caramel", ["-1", "-2"], "webp", SP, PO],
-  ["Calacata Laza", "Calacata-Laza", ["-1", "-2", "-1-2"], "webp", SP, PO],
-  ["Calacata White", "Calacata-White", [], "webp", SP, PO],
-  ["Carrara White", "Carrara-White", ["-2"], "webp", SP, PO],
-  ["Charcoal Grey", "Charcoal-Grey", [], "webp", SP, PO],
-  ["Calacata Rocky", "Calacata-Rocky", ["-1", "-2"], "webp", SP, PO],
-  ["Calacata Vega", "Calacata-Vega", ["-1", "-2", "-1-2"], "webp", SP, PO],
-  ["Crystal White", "Crystal-White", [], "webp", SP, PO],
-  ["Fleece", "Fleece", ["-2"], "webp", SP, PO],
-  ["Pure White", "Pure-White", ["-room"], "webp", SP, PO],
-  ["Snow White", "Snow-White", ["-room"], "webp", SP, PO],
-  ["Sparkling Grey", "Sparkling-Grey", [], "webp", SP, PO],
-  ["Taj Mahal", "Taj-Mahal", [], "webp", SP, PO],
-  ["Calacata Elegant", "Calacata-Elegant", ["-2"], "png", PF, PO],
-  ["Concrete Grey", "Concrete-Grey", ["-2"], "jpg", PF, PO],
-  ["French Grey", "French-Grey", ["-1", "-2"], "webp", PF, PO],
-  ["Volakas White", "Volakas-White", ["-1", "-2"], "webp", PF, PO],
-  ["Calacata Borghini", "Calacata-Borghini", ["-2", "-3"], "webp", SP, PE],
-  ["Calacata Montana", "Calacata-Montana", ["-1", "-2"], "webp", SP, PE],
-  ["Calacata Oceanic", "Calacata-Oceanic", ["-2"], "webp", SP, PE],
-  ["Calacata River", "Calacata-River", [], "webp", SP, PE],
-  ["Perla Bianco", "Perla-Bianco", ["-2"], "webp", SP, PE],
-  ["Perla Venata", "Perla-Venata", ["-1", "-2"], "webp", SP, PE],
-  ["Luccid Gold", "Luccid-Gold", ["-1", "-2"], "webp", PF, PE],
+// [name, slab photo file base, extension, available in, finish]
+const rows: [string, string, string, Stone["availableIn"], Stone["finish"]][] = [
+  ["Aran White", "Aran-white", "webp", SP, PO],
+  ["Bianco Swan", "Bianco-Swan", "webp", SP, PO],
+  ["Black Star", "Black-Star", "jpg", SP, PO],
+  ["Calacata Alaska", "Calacata-Alaska", "webp", SP, PO],
+  ["Calacata Alto", "Calacata-Alto", "webp", SP, PO],
+  ["Calacata Caramel", "Calacata-Caramel", "webp", SP, PO],
+  ["Calacata Laza", "Calacata-Laza", "webp", SP, PO],
+  ["Calacata White", "Calacata-White", "webp", SP, PO],
+  ["Carrara White", "Carrara-White", "webp", SP, PO],
+  ["Charcoal Grey", "Charcoal-Grey", "webp", SP, PO],
+  ["Calacata Rocky", "Calacata-Rocky", "webp", SP, PO],
+  ["Calacata Vega", "Calacata-Vega", "webp", SP, PO],
+  ["Crystal White", "Crystal-White", "webp", SP, PO],
+  ["Fleece", "Fleece", "webp", SP, PO],
+  ["Pure White", "Pure-White", "webp", SP, PO],
+  ["Snow White", "Snow-White", "webp", SP, PO],
+  ["Sparkling Grey", "Sparkling-Grey", "webp", SP, PO],
+  ["Taj Mahal", "Taj-Mahal", "webp", SP, PO],
+  ["Calacata Elegant", "Calacata-Elegant", "png", PF, PO],
+  ["Concrete Grey", "Concrete-Grey", "jpg", PF, PO],
+  ["French Grey", "French-Grey", "webp", PF, PO],
+  ["Volakas White", "Volakas-White", "webp", PF, PO],
+  ["Calacata Borghini", "Calacata-Borghini", "webp", SP, PE],
+  ["Calacata Montana", "Calacata-Montana", "webp", SP, PE],
+  ["Calacata Oceanic", "Calacata-Oceanic", "webp", SP, PE],
+  ["Calacata River", "Calacata-River", "webp", SP, PE],
+  ["Perla Bianco", "Perla-Bianco", "webp", SP, PE],
+  ["Perla Venata", "Perla-Venata", "webp", SP, PE],
+  ["Luccid Gold", "Luccid-Gold", "webp", PF, PE],
 ];
 
-export const stones: Stone[] = rows.map(([name, base, extras, ext, availableIn, finish]) => {
-  const images = ["", ...extras].map((s) => `/client/补资料-${base}${s}.${ext}`);
+export const stones: Stone[] = rows.map(([name, base, ext, availableIn, finish]) => {
+  const images = [`/client/补资料-${base}.${ext}`, ...showroom.filter((p) => p.stone === name).map((p) => p.src)];
   return { name, slug: toSlug(name), src: images[0], images, availableIn, finish };
 });
 

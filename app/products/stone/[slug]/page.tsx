@@ -32,7 +32,7 @@ export default async function StoneDetailPage({ params }: Props) {
       eyebrow="Quartz"
       title={stone.name}
       images={stone.images}
-      alt={`${stone.name} quartz slab`}
+      alt={`${stone.name} quartz`}
       note="Images are for reference only. Color and pattern can vary from slab to slab. Please call us or visit our Upland showroom to see the material in person."
       specs={stoneSpecs(stone)}
       description={stoneDescription(stone)}

@@ -64,7 +64,7 @@ export function ProductDetail({
           <div className="mt-8 grid gap-10 lg:grid-cols-2 lg:gap-14">
             <div className="min-w-0">
               {note && <p className="mb-3 text-sm italic text-muted-foreground">{note}</p>}
-              <ProductGallery images={images} alt={alt} fit={imageFit} />
+              <ProductGallery images={images} alt={alt} caption={model ?? title} fit={imageFit} />
             </div>
             <div className="min-w-0">
               <p className="font-heading text-sm font-semibold uppercase tracking-[0.25em] text-primary">{eyebrow}</p>
