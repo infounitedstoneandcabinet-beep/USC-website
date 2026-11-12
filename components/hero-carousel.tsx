@@ -7,14 +7,19 @@ import { cn } from "@/lib/utils";
 type Slide = { src: string; alt: string };
 
 // Auto-advances right to left; the first slide is cloned at the end so the loop never runs backwards.
+// The showing photo slowly zooms in (Ken Burns); the one sliding out keeps its zoom so nothing jumps.
 export function HeroCarousel({ slides, className }: { slides: Slide[]; className?: string }) {
   const [index, setIndex] = useState(0);
   const [animate, setAnimate] = useState(true);
   const [playing, setPlaying] = useState(true);
   const [hovered, setHovered] = useState(false);
+  const [reduceMotion, setReduceMotion] = useState(false);
 
   useEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) setPlaying(false);
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setPlaying(false);
+      setReduceMotion(true);
+    }
   }, []);
 
   useEffect(() => {
@@ -57,14 +62,19 @@ export function HeroCarousel({ slides, className }: { slides: Slide[]; className
         onTransitionEnd={onTransitionEnd}
       >
         {track.map((s, i) => (
-          <img
-            key={`${s.src}-${i}`}
-            src={s.src}
-            alt={i === slides.length ? "" : s.alt}
-            aria-hidden={i !== current || i === slides.length ? true : undefined}
-            loading={i === 0 ? "eager" : "lazy"}
-            className="h-full w-full shrink-0 object-cover"
-          />
+          <div key={`${s.src}-${i}`} className="h-full w-full shrink-0 overflow-hidden">
+            <img
+              src={s.src}
+              alt={i === slides.length ? "" : s.alt}
+              aria-hidden={i !== current || i === slides.length ? true : undefined}
+              loading={i === 0 ? "eager" : "lazy"}
+              style={{ animationPlayState: playing ? "running" : "paused" }}
+              className={cn(
+                "h-full w-full object-cover",
+                !reduceMotion && (i === index || i === index - 1) && "animate-kenburns",
+              )}
+            />
+          </div>
         ))}
       </div>
 

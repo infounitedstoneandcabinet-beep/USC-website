@@ -104,28 +104,30 @@ export default function Home() {
     <>
       <section className="bg-white pt-4 sm:pt-6">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
-          <div className="relative">
-            <HeroCarousel
-              slides={heroSlides}
-              className="aspect-[4/3] w-full sm:aspect-[16/9] lg:aspect-auto lg:h-[36rem]"
+          <div className="relative overflow-hidden rounded-sm">
+            <HeroCarousel slides={heroSlides} className="h-[34rem] w-full sm:h-[32rem] lg:h-[36rem]" />
+            {/* Text sits right on the photo; a dark wash keeps it readable. */}
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/75 via-black/45 to-black/10 lg:bg-gradient-to-r lg:from-black/65 lg:via-black/35 lg:to-transparent"
             />
-            <div className="relative -mt-10 mx-3 bg-white p-6 text-center shadow-xl sm:mx-10 sm:p-8 lg:absolute lg:left-12 lg:top-1/2 lg:mx-0 lg:mt-0 lg:w-[26rem] lg:-translate-y-1/2">
-              <p className="font-heading text-xs font-semibold uppercase tracking-[0.3em] text-primary">
+            <div className="pointer-events-none absolute inset-x-0 bottom-0 p-6 text-center text-white sm:p-10 lg:inset-y-0 lg:left-12 lg:right-auto lg:flex lg:w-[28rem] lg:flex-col lg:justify-center lg:p-0 lg:text-left">
+              <p className="font-heading text-xs font-semibold uppercase tracking-[0.3em] text-white/85">
                 Countertops &amp; Cabinetry
               </p>
-              <h1 className="mt-4 text-3xl font-semibold uppercase tracking-[0.08em] text-ink sm:text-4xl lg:text-3xl xl:text-4xl">
+              <h1 className="mt-4 text-3xl font-semibold uppercase tracking-[0.08em] text-white drop-shadow-sm sm:text-4xl xl:text-5xl">
                 Stone and cabinets, planned together
               </h1>
-              <span aria-hidden="true" className="mx-auto mt-5 block h-px w-16 bg-slate-400" />
-              <p className="mt-5 text-muted-foreground">
+              <span aria-hidden="true" className="mx-auto mt-5 block h-px w-16 bg-white/70 lg:mx-0" />
+              <p className="mt-5 text-white/90">
                 United Stone &amp; Cabinet helps you choose countertops and cabinets for your kitchen, bathroom and
                 more, so every piece fits and matches.
               </p>
-              <div className="mt-6 flex flex-col justify-center gap-3 sm:flex-row lg:flex-col xl:flex-row">
+              <div className="pointer-events-auto mt-6 flex flex-col justify-center gap-3 sm:flex-row lg:justify-start">
                 <ButtonLink href="/contact">
                   Request a Quote <ArrowRight aria-hidden="true" className="size-5" />
                 </ButtonLink>
-                <ButtonLink href="/products" variant="outline">
+                <ButtonLink href="/products" variant="light">
                   View Products
                 </ButtonLink>
               </div>
