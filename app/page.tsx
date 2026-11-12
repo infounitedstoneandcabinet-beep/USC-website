@@ -10,7 +10,7 @@ import { site } from "@/lib/site";
 import { stones } from "@/lib/stones";
 
 // Same six colors the home page showed before the detail pages were added.
-const stoneSwatches = ["calacata-elegant", "perla-bianco", "black-star", "calacata-caramel", "carrara-white", "concrete-grey"]
+const stoneSwatches = ["calacata-borghini", "calacata-rocky", "calacata-montana", "calacata-caramel", "taj-mahal", "luccid-gold"]
   .map((slug) => stones.find((s) => s.slug === slug))
   .filter((s) => s !== undefined);
 const cabinetSwatches = [0, 3, 4, 9].map((i) => cabinets[i]);
