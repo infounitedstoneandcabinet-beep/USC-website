@@ -43,7 +43,6 @@ export const nav: NavItem[] = [
     ],
   },
   { href: "/gallery", label: "Gallery" },
-  { href: "/visualizer/", label: "Visualizer", plain: true },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ];

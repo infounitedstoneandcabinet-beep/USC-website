@@ -43,8 +43,6 @@ const steps: { icon: typeof Ruler; title: string; text: string; href?: string; l
     icon: Ruler,
     title: "Choose stone and cabinets",
     text: "Pick colors, finishes and styles that work together.",
-    href: "/visualizer/",
-    linkText: "Try the Visualizer",
   },
   { icon: ClipboardList, title: "Get your quote", text: "We put your countertops and cabinets into one clear quote." },
 ];
