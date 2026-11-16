@@ -25,7 +25,9 @@ export const site = {
   serviceArea: "California, Oregon, Nevada & Arizona",
 };
 
-export type NavItem = { href: string; label: string; children?: { href: string; label: string }[] };
+// plain: render a normal <a> (full page load) instead of Next.js <Link>. The Room
+// Visualizer is a separate static page; see 房间可视化工具/方案-2026-11-16.md section 0.10.
+export type NavItem = { href: string; label: string; plain?: boolean; children?: { href: string; label: string }[] };
 
 export const nav: NavItem[] = [
   { href: "/", label: "Home" },
@@ -41,6 +43,7 @@ export const nav: NavItem[] = [
     ],
   },
   { href: "/gallery", label: "Gallery" },
+  { href: "/visualizer/", label: "Visualizer", plain: true },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ];

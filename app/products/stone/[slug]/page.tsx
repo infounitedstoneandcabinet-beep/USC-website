@@ -38,6 +38,7 @@ export default async function StoneDetailPage({ params }: Props) {
       description={stoneDescription(stone)}
       listTitle="Care & Maintenance"
       list={stoneCare}
+      visualizeHref={`/visualizer/room.html?stone=${stone.slug}`}
       relatedTitle="Other quartz colors"
       related={stones
         .filter((s) => s.slug !== stone.slug)

@@ -36,9 +36,16 @@ const collections: {
   },
 ];
 
-const steps = [
+// href/linkText: optional plain <a> under the text (the Room Visualizer is a separate static page).
+const steps: { icon: typeof Ruler; title: string; text: string; href?: string; linkText?: string }[] = [
   { icon: MessageSquare, title: "Tell us about your project", text: "Share your room, rough size and the look you want." },
-  { icon: Ruler, title: "Choose stone and cabinets", text: "Pick colors, finishes and styles that work together." },
+  {
+    icon: Ruler,
+    title: "Choose stone and cabinets",
+    text: "Pick colors, finishes and styles that work together.",
+    href: "/visualizer/",
+    linkText: "Try the Visualizer",
+  },
   { icon: ClipboardList, title: "Get your quote", text: "We put your countertops and cabinets into one clear quote." },
 ];
 
@@ -201,7 +208,7 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <SectionHeading title="How it works" />
           <ol className="mt-12 grid gap-6 md:grid-cols-3">
-            {steps.map(({ icon: Icon, title, text }, i) => (
+            {steps.map(({ icon: Icon, title, text, href, linkText }, i) => (
               <li key={title} className="flex flex-col items-center rounded-sm bg-card p-8 text-center shadow-sm">
                 <span className="grid size-12 place-items-center rounded-full border border-slate-300 text-primary">
                   <Icon aria-hidden="true" className="size-5" />
@@ -211,6 +218,14 @@ export default function Home() {
                 </span>
                 <h3 className="mt-2 text-lg font-semibold uppercase tracking-[0.08em] text-ink">{title}</h3>
                 <p className="mt-2 text-muted-foreground">{text}</p>
+                {href && (
+                  <a
+                    href={href}
+                    className="mt-3 inline-flex items-center gap-1 font-semibold text-primary underline-offset-4 hover:underline"
+                  >
+                    {linkText} <ArrowRight aria-hidden="true" className="size-4" />
+                  </a>
+                )}
               </li>
             ))}
           </ol>

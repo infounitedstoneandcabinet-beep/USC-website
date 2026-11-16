@@ -8,6 +8,11 @@ import { nav, site } from "@/lib/site";
 import { cn } from "@/lib/utils";
 import { ButtonLink } from "./button-link";
 
+// Nav items marked plain (the Room Visualizer) are normal links with a full page load.
+function NavLink({ plain, ...props }: React.ComponentProps<"a"> & { href: string; plain?: boolean }) {
+  return plain ? <a {...props} /> : <Link {...props} />;
+}
+
 export function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
@@ -132,8 +137,9 @@ export function Header() {
               }
               return (
                 <li key={item.href}>
-                  <Link
+                  <NavLink
                     href={item.href}
+                    plain={item.plain}
                     aria-current={active ? "page" : undefined}
                     className={cn(
                       "rounded-md border-b-2 px-4 py-2 text-sm font-medium uppercase tracking-[0.15em] transition-colors duration-200",
@@ -143,7 +149,7 @@ export function Header() {
                     )}
                   >
                     {item.label}
-                  </Link>
+                  </NavLink>
                 </li>
               );
             })}
@@ -172,8 +178,9 @@ export function Header() {
           <ul className="mx-auto flex max-w-7xl flex-col px-4 py-3 sm:px-6">
             {nav.map((item) => (
               <li key={item.href}>
-                <Link
+                <NavLink
                   href={item.href}
+                  plain={item.plain}
                   aria-current={pathname === item.href ? "page" : undefined}
                   className={cn(
                     "block rounded-md px-3 py-3 text-sm font-medium uppercase tracking-[0.15em] transition-colors duration-200 hover:bg-muted",
@@ -181,7 +188,7 @@ export function Header() {
                   )}
                 >
                   {item.label}
-                </Link>
+                </NavLink>
                 {item.children && (
                   <ul className="ml-4 border-l border-border pl-2">
                     {item.children.map((child) => (

@@ -1,0 +1,66 @@
+:root {
+  --bg: #f6f5f2;
+  --panel: #fff;
+  --ink: #1d1d1b;
+  --muted: #6b6a66;
+  --line: #e3e1dc;
+  --accent: #e4c65b;
+  --focus: #1f5fbf;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body { font: 15px/1.45 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; color: var(--ink); background: var(--bg); }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+
+.topbar { display: flex; align-items: center; gap: 12px; padding: 12px 16px; background: var(--panel); border-bottom: 1px solid var(--line); }
+.brand { font-weight: 700; letter-spacing: .02em; text-decoration: none; }
+.topbar .spacer { flex: 1; }
+.btn { display: inline-flex; align-items: center; justify-content: center; min-height: 40px; border: 1px solid var(--line); background: #fff; border-radius: 8px; padding: 8px 14px; font: inherit; cursor: pointer; color: var(--ink); text-decoration: none; }
+.btn.primary { background: var(--accent); border-color: var(--accent); font-weight: 600; }
+
+/* Room list */
+.list-page { max-width: 1100px; margin: 0 auto; padding: 28px 16px 48px; }
+.list-page h1 { margin: 0 0 6px; font-size: 28px; }
+.list-page .sub { margin: 0 0 24px; color: var(--muted); }
+.rooms { list-style: none; margin: 0; padding: 0; display: grid; gap: 18px; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+.room-card { display: block; background: var(--panel); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; text-decoration: none; }
+.room-card img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; background: #ddd; }
+.room-card span { display: block; padding: 12px 14px; font-weight: 600; }
+.room-card:hover { box-shadow: 0 4px 16px rgba(0, 0, 0, .08); }
+.empty { color: var(--muted); }
+
+/* Room page */
+.app { display: grid; grid-template-columns: 300px 1fr; height: calc(100vh - 65px); }
+aside { background: var(--panel); border-right: 1px solid var(--line); display: flex; flex-direction: column; min-height: 0; }
+.room-name { padding: 14px 18px 2px; font-weight: 700; }
+.chosen { padding: 2px 18px 8px; font-size: 13px; color: var(--ink); }
+.chosen:empty { display: none; }
+.crumb { padding: 0 18px 12px; color: var(--muted); font-size: 13px; border-bottom: 1px solid var(--line); }
+.crumb b { color: var(--ink); }
+.list { overflow: auto; padding: 10px; display: grid; gap: 6px; align-content: start; flex: 1; }
+.item { display: flex; gap: 12px; align-items: center; padding: 8px; border: 1px solid transparent; border-radius: 10px; cursor: pointer; background: none; text-align: left; font: inherit; color: inherit; width: 100%; }
+.item:hover { background: #f3f2ef; }
+.item[aria-pressed="true"] { border-color: var(--ink); background: #f3f2ef; }
+.item img, .item .none { width: 56px; height: 56px; object-fit: cover; border-radius: 6px; flex: none; background: #ddd; }
+.item .none { display: grid; place-items: center; font-size: 11px; color: var(--muted); background: #eee; }
+.item[disabled] { opacity: .45; cursor: not-allowed; }
+.item small { display: block; color: var(--muted); }
+.hint { padding: 8px; color: var(--muted); margin: 0; }
+.note { font-size: 12px; color: var(--muted); padding: 10px 18px; border-top: 1px solid var(--line); margin: 0; }
+main.stage { display: grid; place-items: center; padding: 16px; min-width: 0; min-height: 0; }
+.room { position: relative; aspect-ratio: var(--ar); width: min(100%, calc((100vh - 97px) * var(--arn))); }
+.room img { position: absolute; display: block; user-select: none; -webkit-user-drag: none; }
+.room .base { inset: 0; width: 100%; height: 100%; }
+.tag { position: absolute; transform: translate(-50%, -50%); background: rgba(40, 40, 38, .85); color: #fff; border: 0; border-radius: 999px; padding: 7px 13px; font: 600 13px/1 system-ui, sans-serif; cursor: pointer; white-space: nowrap; }
+.tag[aria-pressed="true"] { background: #fff; color: var(--ink); box-shadow: 0 0 0 2px var(--ink); }
+
+@media (max-width: 800px) {
+  .topbar { flex-wrap: wrap; }
+  .app { grid-template-columns: 1fr; height: auto; }
+  main.stage { order: 1; padding: 0 0 12px; }
+  aside { order: 2; border-right: 0; border-top: 1px solid var(--line); }
+  .room { width: 100%; }
+  .list { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+  .tag { padding: 6px 10px; font-size: 12px; }
+}

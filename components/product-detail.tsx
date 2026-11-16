@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ChevronRight, Mail, Phone } from "lucide-react";
+import { ChevronRight, Eye, Mail, Phone } from "lucide-react";
 import { site } from "@/lib/site";
 import { ButtonLink } from "./button-link";
 import { ProductGallery } from "./product-gallery";
@@ -23,6 +23,7 @@ export function ProductDetail({
   relatedTitle,
   related,
   relatedFit = "cover",
+  visualizeHref,
 }: {
   crumbs: { href: string; label: string }[];
   eyebrow: string;
@@ -39,6 +40,8 @@ export function ProductDetail({
   relatedTitle: string;
   related: RelatedItem[];
   relatedFit?: "cover" | "contain";
+  /** Room Visualizer link; opened as a normal page load (plain <a>). */
+  visualizeHref?: string;
 }) {
   const quoteHref = `${site.emailHref}?subject=${encodeURIComponent(`Quote request: ${model ?? title}`)}`;
   return (
@@ -89,6 +92,11 @@ export function ProductDetail({
                 <ButtonLink href={quoteHref}>
                   <Mail aria-hidden="true" className="size-5" /> Request a Quote
                 </ButtonLink>
+                {visualizeHref && (
+                  <ButtonLink href={visualizeHref} variant="outline" plain>
+                    <Eye aria-hidden="true" className="size-5" /> See it in a kitchen
+                  </ButtonLink>
+                )}
                 <ButtonLink href={site.phoneHref} variant="outline">
                   <Phone aria-hidden="true" className="size-5" /> Call {site.phone}
                 </ButtonLink>
