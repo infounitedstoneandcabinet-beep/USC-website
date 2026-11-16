@@ -1,4 +1,4 @@
-// Pure helpers shared by the room list (index.html) and the room page (room.html).
+// Pure helpers shared by the room list (index.html) and the room page (room/index.html).
 // No DOM access here, so node --test can run them.
 
 const SAFE = /^[a-z0-9-]+$/;
@@ -25,7 +25,7 @@ export function roomIdFor(query, catalog) {
 
 /** Each room has its own page; the room list links to it with a plain link. */
 export function roomHref(roomId) {
-  return "room.html?id=" + roomId;
+  return "room/?id=" + roomId; // folder address: the live host (Vercel) answers 404 for .html URLs
 }
 
 /** With ?stone=, pre-select that stone on every stone surface that has it rendered. */

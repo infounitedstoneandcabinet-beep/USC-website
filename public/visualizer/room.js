@@ -12,7 +12,7 @@ const roomId = catalog && roomIdFor(query, catalog);
 const manifest = roomId && (await fetch(`data/rooms/${roomId}/manifest.json`).then((r) => (r.ok ? r.json() : null)).catch(() => null));
 
 if (!manifest) {
-  location.replace("index.html");
+  location.replace("./"); // the room list (resolved from <base href="../">)
 } else {
   start(manifest);
 }

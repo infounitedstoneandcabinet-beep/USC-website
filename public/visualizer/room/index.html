@@ -3,6 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- This page lives at room/ (a folder address: the live host answers 404 for .html
+     URLs); every relative path below resolves from the visualizer folder. -->
+<base href="../">
 <title>Room Visualizer | United Stone &amp; Cabinet</title>
 <meta name="description" content="Try United Stone & Cabinet quartz and cabinet colors in a real room.">
 <link rel="stylesheet" href="styles.css">
@@ -11,7 +14,7 @@
 <header class="topbar">
   <a class="brand" href="../">United Stone &amp; Cabinet</a>
   <span class="spacer"></span>
-  <a class="btn" href="index.html">All rooms</a>
+  <a class="btn" href="./">All rooms</a>
   <button class="btn" id="reset" type="button">Reset</button>
   <a class="btn primary" id="quote" href="mailto:Info@unitedstoneandcabinet.com">Request a Quote</a>
 </header>
